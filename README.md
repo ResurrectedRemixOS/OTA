@@ -14,7 +14,7 @@ In order for a device to be OTA compliant, there are a few things to know.
       "oem": "manufacturer",
       "device": "device",
       "filename": "ResurrectedRemix-<date>-<build type>-<device>.zip",
-      "download": "https://sourceforge.net/projects/resurrectedremix/files/<device>/ResurrectedRemix-<date>-<build type>-<device>.zip/download",
+      "download": "https://dl.resurrectedremix.com/<device>/ResurrectedRemix-<date>-<build type>-<device>/ResurrectedRemix-<date>-<build type>-<device>.zip",
       "timestamp": 0000000000,
       "md5": "abcdefg123456",
       "sha256": "abcdefg123456",
@@ -76,18 +76,13 @@ For following below description, replace *codename* with your device codename.
 6. Submit a pull request to this repo (this way we validate that you understood the requirements and if all is good you'll be granted direct push access to this repo)
 
 ### 3.2 Update build ###
-1. Upload the zip to `https://sourceforge.net/projects/resurrectedremix/files/<codename>/`.
-2. Go to OTA path and fetch updates from repo.
+The Updater reads `https://dl.resurrectedremix.com/ota/<codename>.json` and
+`changelog_<codename>.txt` next to it, not this repo.
+1. Make changes to changelog_*codename*.txt.
+2. Run the website's release script. It uploads the zip, its flash images and SHA256SUMS to
+   `https://dl.resurrectedremix.com/<codename>/<build>/`, then the json and changelog to `ota/`,
+   and commits *codename*.json here.
 ```
-cd vendor/OTA
-git fetch --all
-git pull
+python3 ~/Pictures/workspace/rr-website/tools/release.py <codename>
 ```
-3. Copy *codename*.json file from OUT dir over to this repo.
-4. Make changes to changelog_*codename*.txt.
-5. Now with the files updated, commit your update to this repo.
-```
-git add .
-git commit #(this opens up your prefered text editor, so write a nice description like "<device codename>: update build")
-git push #you may be prompted for your github username and password
-```
+3. Push this repo.
