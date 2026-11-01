@@ -1,0 +1,2 @@
+Device: OnePlus 11 (salami)
+Device maintainer: OscarM1019
