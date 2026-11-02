@@ -1,0 +1,2 @@
+Device: tegu (tegu)
+Device maintainer: OscarM1019

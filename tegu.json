@@ -1,0 +1,32 @@
+{
+    "response": [
+        {
+            "maintainer": "OscarM1019",
+            "oem": "Google",
+            "device": "tegu",
+            "filename": "",
+            "download": "",
+            "timestamp": 0,
+            "md5": "",
+            "sha256": "",
+            "size": 0,
+            "version": "",
+            "buildtype": "OFFICIAL",
+            "buildvariant": "gapps",
+            "os_sdk_level": 37,
+            "os_patch_level": "",
+            "changelog": [],
+            "forum": "",
+            "gapps": "",
+            "firmware": "",
+            "modem": "",
+            "bootloader": "",
+            "recovery": "",
+            "paypal": "https://www.paypal.com/paypalme/osmjr1019",
+            "telegram": "",
+            "dt": "https://github.com/ResurrectedRemix-Devices/android_device_google_tegu",
+            "common-dt": "https://github.com/ResurrectedRemix-Devices/android_device_google_zumapro",
+            "kernel": ""
+        }
+    ]
+}
