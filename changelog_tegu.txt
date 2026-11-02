@@ -1,2 +1,2 @@
-Device: tegu (tegu)
+Device: Pixel 9a (tegu)
 Device maintainer: OscarM1019
