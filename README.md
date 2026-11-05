@@ -25,7 +25,7 @@ changelog/<device>.txt    changelog
       "md5": "abcdefg123456",
       "sha256": "abcdefg123456",
       "size": 123456789,
-      "version": "version",
+      "version": "",
       "buildtype": "OFFICIAL/UNOFFICIAL",
       "buildvariant": "vanilla/gapps",
       "os_sdk_level": 37,
@@ -48,10 +48,12 @@ changelog/<device>.txt    changelog
 ```
 
 The build writes `<device>.json` to the OUT dir with `createjson.py`. It fills in the file
-fields, `version`, `os_sdk_level` (from `ro.build.version.sdk`), `os_patch_level` (from
+fields, `os_sdk_level` (from `ro.build.version.sdk`), `os_patch_level` (from
 `ro.build.version.security_patch`) and `changelog`, and copies the device fields (`oem`, the
 links, `dt`, `common-dt`, `kernel`) from this repo's `device/<device>.json`. The updater
 uses the levels to decide whether a build is installable, so do not edit them by hand.
+Builds don't have version numbers, so `version` stays empty, but keep the key: Updaters on older
+builds refuse a json without it.
 
 ### 1.2 changelog.txt structure ###
 ```

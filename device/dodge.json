@@ -10,7 +10,7 @@
             "md5": "f3f9f05f3a53a8932279d77ce5758ac4",
             "sha256": "907ff4b7b6288d36bf05228244cd6b8dcdf8939bf60f4b5645ed328b67197c75",
             "size": 5573503939,
-            "version": "9.0",
+            "version": "",
             "buildtype": "OFFICIAL",
             "buildvariant": "gapps",
             "os_sdk_level": 37,
