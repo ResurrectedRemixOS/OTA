@@ -1,32 +1,31 @@
 {
-  "response": [
-    {
-      "maintainer": "OscarM1019",
-      "oem": "OnePlus",
-      "device": "dodge",
-      "filename": "",
-      "download": "",
-      "timestamp": 0,
-      "md5": "",
-      "sha256": "",
-      "size": 0,
-      "version": "",
-      "buildtype": "OFFICIAL",
-      "buildvariant": "gapps",
-      "os_sdk_level": 37,
-      "os_patch_level": "",
-      "changelog": [],
-      "forum": "",
-      "gapps": "",
-      "firmware": "",
-      "modem": "",
-      "bootloader": "",
-      "recovery": "",
-      "paypal": "https://www.paypal.com/paypalme/osmjr1019",
-      "telegram": "https://t.me/OP13CustomRoms/3",
-      "dt": "https://github.com/ResurrectedRemix-Devices/android_device_oneplus_dodge",
-      "common-dt": "https://github.com/ResurrectedRemix-Devices/android_device_oneplus_sm8750-common",
-      "kernel": "https://github.com/ResurrectedRemix-Devices/android_kernel_oneplus_sm8750"
-    }
-  ]
+    "response": [
+        {
+            "maintainer": "OscarM1019",
+            "oem": "OnePlus",
+            "device": "dodge",
+            "filename": "ResurrectedRemix-20261104-OFFICIAL-dodge.zip",
+            "download": "https://dl.resurrectedremix.com/dodge/ResurrectedRemix-20261104-OFFICIAL-dodge/ResurrectedRemix-20261104-OFFICIAL-dodge.zip",
+            "timestamp": 1793835966,
+            "md5": "1822bf58874e25d4d276fe42f0160c0c",
+            "sha256": "ff0dfb6f42ca9088e7bd2c6aa09920fba7bb8ac2b043613ab269aeecc1cbd200",
+            "size": 5573506433,
+            "version": "9.0",
+            "buildtype": "OFFICIAL",
+            "buildvariant": "gapps",
+            "os_sdk_level": 37,
+            "os_patch_level": "2026-10-01",
+            "forum": "",
+            "gapps": "",
+            "firmware": "",
+            "modem": "",
+            "bootloader": "",
+            "recovery": "",
+            "paypal": "https://www.paypal.com/paypalme/osmjr1019",
+            "telegram": "https://t.me/OP13CustomRoms/3",
+            "dt": "https://github.com/ResurrectedRemix-Devices/android_device_oneplus_dodge",
+            "common-dt": "https://github.com/ResurrectedRemix-Devices/android_device_oneplus_sm8750-common",
+            "kernel": "https://github.com/ResurrectedRemix-Devices/android_kernel_oneplus_sm8750"
+        }
+    ]
 }
