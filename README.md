@@ -56,15 +56,21 @@ Builds don't have version numbers, so `version` stays empty, but keep the key: U
 builds refuse a json without it.
 
 ### 1.2 changelog.txt structure ###
+The build writes `<device>_changelog.txt` to the OUT dir with `changelog.py`: the last 20 days
+of commits, a block per day, then each repo's. It has the ROM source and this device's own
+trees, kernel and blobs, but no other device's. Only the header lines above the first `====` are
+written by hand. The release script puts them over the build's changelog.
 ```
 Device: Device name (<device codename>)
 Device maintainer: Name (nickname)
 Required firmware: (optional)
 
-===== <date> =====
-- change 1
-- change 2
-- change 3
+====================
+     <date>
+====================
+
+   * <repo>
+<commit> <subject>
 ```
 
 ## 2 Guidelines ##
@@ -80,16 +86,16 @@ For following below description, replace *codename* with your device codename.
 2. A file named *codename*.json is created in OUT dir after you built.
 3. Copy it to the `device` folder where this repo was cloned.
 4. Open the file and modify needed entries (see 1.1 for mandatory entries).
-5. Create a file named *codename*.txt in the `changelog` folder based on changelog structure from point 1.2, and add your changelog in it.
+5. Create a file named *codename*.txt in the `changelog` folder with the header lines from point 1.2.
 6. Submit a pull request to this repo (this way we validate that you understood the requirements and if all is good you'll be granted direct push access to this repo)
 
 ### 3.2 Update build ###
 The Updater reads `https://dl.resurrectedremix.com/ota/<codename>.json` and
 `changelog_<codename>.txt` next to it, not this repo.
-1. Make changes to *codename*.txt in the `changelog` folder.
+1. If needed, change the header lines of *codename*.txt in the `changelog` folder.
 2. Run the website's release script. It uploads the zip, its flash images and SHA256SUMS to
    `https://dl.resurrectedremix.com/<codename>/<build>/`, then the json and changelog to `ota/`,
-   and commits *codename*.json to the `device` folder here.
+   and commits *codename*.json and *codename*.txt here.
 ```
 python3 ~/Pictures/workspace/rr-website/tools/release.py <codename>
 ```
