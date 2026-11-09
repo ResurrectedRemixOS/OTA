@@ -1,0 +1,2 @@
+Device: OnePlus 15 (infiniti)
+Device maintainer: OscarM1019
