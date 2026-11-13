@@ -1,0 +1,2 @@
+Device: POCO F8 Ultra / Redmi K90 Pro Max (myron)
+Device maintainer: Kill3rEz

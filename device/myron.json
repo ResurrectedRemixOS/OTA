@@ -1,0 +1,31 @@
+{
+    "response": [
+        {
+            "maintainer": "Kill3rEz",
+            "oem": "Xiaomi",
+            "device": "myron",
+            "filename": "",
+            "download": "",
+            "timestamp": 0,
+            "md5": "",
+            "sha256": "",
+            "size": 0,
+            "version": "",
+            "buildtype": "OFFICIAL",
+            "buildvariant": "gapps",
+            "os_sdk_level": 37,
+            "os_patch_level": "",
+            "forum": "",
+            "gapps": "",
+            "firmware": "",
+            "modem": "",
+            "bootloader": "",
+            "recovery": "",
+            "paypal": "",
+            "telegram": "",
+            "dt": "https://github.com/Evolution-X-Devices/device_xiaomi_myron",
+            "common-dt": "https://github.com/Evolution-X-Devices/device_xiaomi_sm8850-common",
+            "kernel": ""
+        }
+    ]
+}
