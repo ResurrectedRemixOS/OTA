@@ -2,79 +2,18 @@ Device: POCO F8 Ultra / Redmi K90 Pro Max (myron)
 Device maintainer: Kill3rEz
 
 ====================
-     11-10-2026
+     11-15-2026
 ====================
 
-   * ota/bakasu/src-bakasu
-548d1dda manager: fix the misalignment of the blurred background on cards (#654)
-b4a25600 manager: update translations from Weblate (#640)
+POCO F8 Ultra / Redmi K90 Pro Max (myron) - device changelog
 
-====================
-     11-09-2026
-====================
+Base
+- HyperOS 3.0 global OS3.0.303.0.WPMMIXM vendor, with the POCO F8 Ultra global identity and fingerprint
+- Stock 6.12 GKI kernel with BakaSU v4.2.0-rc3 (35259) root and SUSFS v2.4.0
+- Stock thermal management: thermal-engine-v2 and mi_thermald with their vendor configs
 
-   * ota/bakasu/src-susfs
-395a8c0 KernelSU: Sync with upstream
-
-====================
-     11-08-2026
-====================
-
-   * ota/bakasu/src-susfs
-f83ae68 Bump version to 2.4.0
-2d3d95e Revert "Bump version to 2.4.0"
-a73f043 Bump version to 2.4.0
-
-====================
-     11-06-2026
-====================
-
-   * ota/bakasu/src-susfs
-c6788e2 kernel: ratelimit on logging sus selinux type and rule
-a3d321a KernelSU: Sync with upstream
-
-====================
-     11-01-2026
-====================
-
-   * ota/bakasu/src-susfs
-68f62fa kernel: priority_uid_filter: Add extra flag O_NOATIME with filp_open() to avoid updating the inode atime.
-2557ea2 kernel & KernelSU: Make priority_uid_filter as new feature
-3b5162a KernelSU: Sync with upstream
-f0939fc kernel: priority_uid_filter: Refactor uid parser
-a8af3db kernel: selinux_hide: Revert to the safer hash mechanism and full tuple comparison.
-
-====================
-     10-31-2026
-====================
-
-   * ota/bakasu/src-bakasu
-516d3e87 ksuinit: make lint check happy
-01c11c70 ci,ksubot: Drop spoofed manager build (#642)
-e5473cdf kernel: remove unnecessary 5.10 check
-f98b7a5b kernel: use vmlinux.btf query to workaround 6.6.144's ABI changes (#643)
-
-   * ota/bakasu/src-susfs
-15890c6 kernel & KernelSU: Refactor selinux_hide(experimental, partially done); Sync with upstream
-
-====================
-     10-30-2026
-====================
-
-   * ota/bakasu/src-bakasu
-5785bdb8 ksud, ksuinit: block vklp_smaps_rollup
-
-====================
-     10-29-2026
-====================
-
-   * ota/bakasu/src-susfs
-6b60a30 KernelSU: Fix compiler error
-
-====================
-     10-27-2026
-====================
-
-   * ota/bakasu/src-susfs
-519c86c kernel & Kernel: priority uid filter: Fix UAF bugs and worker not able to run
-
+Audio
+- New Settings > Sound > Dolby page to pick the sound effects engine: Lunaris Dolby (default) or Bose sound
+- Instant engine switch, no reboot needed, and the music that is playing restarts by itself
+- Lunaris Dolby: Dolby profiles, equalizer, per-app profiles, speaker and headphone surround virtualizer
+- Bose sound: Xiaomi's tuning for this phone, with per-app profiles and 3D presets with spatial audio
