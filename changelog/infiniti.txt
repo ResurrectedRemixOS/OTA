@@ -1,2 +1,2062 @@
 Device: OnePlus 15 (infiniti)
 Device maintainer: OscarM1019
+
+====================
+     11-14-2026
+====================
+
+   * bionic
+9943a0880 custom_rom_hide: Preserve canonical proc paths for substituted files
+bcac6be43 custom_rom_hide: Keep substituting files opened with O_NOFOLLOW
+506c6c6a4 custom_rom_hide: Mask blocked paths and null-name reads consistently
+4af29871c custom_rom_hide: Harden custom ROM hiding and improve filesystem handling
+b6fad4e1c libc: Let crash_dump read the real maps
+
+   * device/oneplus/infiniti
+a9da2a9 infiniti: Enable Duck RKP
+86ff91a infiniti: Keep IR Remote out of clone profiles
+5d4f05d sm8750-common: Ship ConsumerIR App
+2be9dcb infiniti: Build Clear Voice into Settings
+
+   * frameworks/base
+2fb3074fd2a3 display: Drop a whole run of fusion hard-zero lux again
+1e31402bdf59 SystemUI: Apply the At a Glance switch without a restart
+9f70c5c6edee GamePropsSpoof: Fix static final Build field writes
+a485a24968cf core: trickystore: Resolve current user with system identity
+3b4b89e711be spoof: Only let attested apps read the TrickyStore keybox
+cfd4ed52860b telephony: Relax default 5G NR SA SS-RSRP signal strength thresholds
+89bd1019cf5e CarrierConfigManager: Enable inflate signal strength by default
+919e696db936 spoof: Credit Duck-ToolBox for Duck RKP
+01b4ec6abca5 pm: Don't hide a package from its own app id
+36892b7f82dd base: Fix SIM2 ringtone resolving to SIM1 ringtone
+08bcec623a2e RingtoneManager: Honor the SIM slot ringtone for incoming calls
+339b91647409 RingtoneManager: Set an default ringtone for the SIM 2
+67291a018ee1 base: Add readable annotation for Ringtone2
+c17eed53c673 base: Phone ringtone setting for Multi SIM device [1/3]
+f1845b55810d FontController: Keep the imported font across configuration changes
+096322469b71 SystemUI: Let only platform-signed apps use the AxPlatform service
+
+   * packages/apps/GameSpace
+8c2215e GameSpace: Restyle the app screens
+49e43e4 GameSpace: Put the game tiles first in the default order
+440f16a GameSpace: Restyle the side bar
+4052c2a GameSpace: Restyle the game panel as a neon HUD
+7659169 GameSpace: Add the RR neon look pieces
+
+   * packages/apps/Launcher3
+ce1265e06a Launcher3: Clear a folder's reveal clip when it finishes opening
+
+   * packages/apps/Remixer
+80dfe8e Remixer: Stop restarting SystemUI for the At a Glance switch
+9f6434c Evolver: TrickyStore: Use the framework keybox and patch validators
+
+   * packages/apps/Settings
+65dc32721c9 Settings: Fix per-SIM ringtone availability with eSIM / empty slots
+6dcd6b0d2db Settings: Phone ringtone setting for Multi SIM device [2/3]
+5b1e620b209 Settings: show per sim ringtone
+
+   * vendor/lineage-priv/keys
+85d55ca rr-17.0 private keys
+
+   * vendor/oneplus/infiniti
+370bd76 infiniti: Import the IR Remote app
+
+   * vendor/oplus/clearcalling
+9f213d8 Clear Voice: Apply the saved state at boot
+
+   * vendor/rr
+46522777d rkp: Credit Duck-ToolBox for the CSR framing
+
+====================
+     11-13-2026
+====================
+
+   * bionic
+fbd5028af libc: Batch the filtered proc files into one write
+
+   * device/lineage/sepolicy
+ba03a3f sepolicy: Allow game space set thread priority
+
+   * device/oneplus/infiniti
+1ef27e0 infiniti: DeviceSettings: Run Sunlight Boost's sensor only when it can engage
+18ee976 infiniti: adfr: Poll the panel every 250 ms, 1 s when it's off
+
+   * device/oneplus/sm8850-common
+5e8bd4a sm8850-common: Keep apps from changing the screen resolution
+fa5d120 sm8850-common: Keep the audio HAL to errors
+
+   * frameworks/base
+c8b1505c8a15 SystemUI: Fix string in AxPlatformFeatureMapper
+514f949685f4 SystemUI: Fix UI freeze on Bluetooth state changes
+df1c704edca8 SystemUI: Adapt platform hooks for dynamic bar usage only
+1b392c39404a SystemUI: Adding platform hooks
+eafd9cf4ba0e services: Add toggle for gamespace auto detect apps
+2bbf21c82a83 services: treat gamespace apps as games
+e3cc547673b9 core: adding support for game space
+6493f9251a1e QS: Drop the wide player's skip buttons when it is two columns
+27442da429c8 SystemUI: Pause the lock screen text rotation while it is hidden
+da55be92e26a QS: Keep a tile drag alive across pages in the customizer
+2209feb168e6 QS: Don't follow a slow release the finger was pushing back
+093d86d59783 QS: Hold Compose's claim on a drag until it has a direction
+dc2386ee41ee QS: Squish tall tiles in step with the rows beside them
+ab98f6256457 QS: Bounce a tile against the tile beside it only
+20a9a41272d8 QS: Pack the collapsed panel as QS does, then cut at its last row
+43a0176b2664 QS: Let a slow release follow the drag
+f86fb54b5215 QS: Don't lose a panel drag to the scrollers inside QS
+5d6571dc588c QS: Keep tiles in place between the collapsed and expanded panel
+84a2a244b352 base: Keep glass over apps smoky over light content in the dark theme
+2a00d7154c18 SystemUI: Keep an expanded notification group's Catalyxx glass
+d5b14193ef3a SystemUI: Glass morph: Keep drawing while the content is faded out
+83c1d4f2707b SystemUI: Show network traffic in the shade header
+f5df7b968ad0 SystemUI: Keep the stacked clock's date out of the shade header
+04d86e0f0b0e display: Let a run of fusion hard-zero lux through, off by default
+3d1e39313a62 View: Keep VRR off only on Qualcomm SoCs
+66dccd91ce6f View: Disable VRR feature to meet power expectations.
+c38e589122a8 SystemUI: Tick the neon ring's spark and pulse off the frame clock
+9d9fecbd1405 SystemUI: Stop edge light's rainbow and effect when the pulse ends
+9c4df5b7d04c SystemUI: Stop the face unlock scan when it's cancelled
+ff457d3b70bf TrickyStore: Check keybox revocation once a day in system_server only
+383fef2acb25 services: Batch spoof GMS restarts and refresh on an idle job
+25e1bdd60bf5 SystemUI: Watch lock screen weather settings instead of polling them
+09fb7ca83aaa SystemUI: Shift AOD burn-in once a minute on the doze tick
+120b116c4d1f SystemUI: Show Now Bar scores' Smartspace surface only with the lock screen
+
+   * frameworks/native
+b4fc783121 renderengine: Reuse the blur composition surface across frames
+f0c0429322 surfaceflinger: Sample far-apart regions in their own small captures
+a91f779f19 surfaceflinger: Arm the panel test TE only while an overlay polls it
+cf1345feee sensorservice: Forward only fusion sensors to the OPLUS fusion engine
+31533373af surfaceflinger: Don't treat glass light moves as user activity
+
+   * hardware/oplus
+9596d94 overlay: qssi: Use AOSP's disconnected Wi-Fi scan schedule
+ca1f8f6 power: Shorten the touch boost without a display idle node
+ab0505e power: Cap CPU and GPU clocks in battery saver
+
+   * lineage-sdk
+4de43618 sdk: Add a sample traffic preview mode to network traffic
+4911dc36 sdk: Log network traffic visibility checks when debugging
+6b2afed9 sdk: Let network traffic show in the shade header
+bb4c5cfd sdk: Draw network traffic in eight styles with eight arrow sets
+6192f08f sdk: Add network traffic look and behavior settings
+
+   * packages/apps/GameSpace
+50092d2 GameSpace: Drop the pulse bass haptics toggle
+c728088 GameSpace: Drop status bar brightness control handling
+
+   * packages/apps/LMOFreeform
+cd4c83d sidebar: Follow Game Space's gaming mode for the hide toggle
+3ea4423 sidebar: permissions: allowlist MANAGE_GAME_MODE for LMOFreeformSidebar
+8d350cb sidebar: Integrate GameSpace awareness and auto-hide support
+
+   * packages/apps/LineageParts
+00ffece LineageParts: Lay out network traffic like the design
+f144ce2 LineageParts: Add network traffic styles, arrows and options
+
+   * packages/apps/Remixer
+dd5558d Liquid Glass: Say what Adapt off changes, keep the smoke rows on
+
+   * packages/apps/Settings
+7641fef9048 Settings: Add Game Space support
+
+   * vendor/extras
+618db439 extras: sdk: material3: Update Material 3 library to v1.5.0-alpha23
+d8d78abd extras: sdk: Import material 3 library v1.5.0-alpha12
+24088b12 extras: sdk: Add platform hooks
+
+   * vendor/rr
+e0a3b01d1 vendor: Add more prebuilt apps to clone apps exemption list
+37947285b config: dexpreopt gamespace
+025a87c5f config: Build GameSpace
+3b26470d7 overlay: Use AOSP's deep Doze timing
+f796955c3 overlay: Tell Setup Wizard that gestures are the default
+d6db9f7f7 nowplaying: Leave Now Playing for the user to switch on
+
+====================
+     11-12-2026
+====================
+
+   * frameworks/base
+210cbfb4dfc8 SystemUI: Draw the Now Bar wave at 30 fps
+75223ad95ce8 base: Keep the glass light still between tilts
+ba8b81302a67 SoftwareMusicHal: Listen every 2 minutes and only with the screen on
+5b7052d50026 SystemUI: Fade any glass sliver of a clipped notification
+45c8b079ea30 SystemUI: Single tone panel with glass on notifications
+e8ca18683383 SystemUI: Catalyxx single tone panel
+2e3102a0b8a4 QS: Draw a lone tile page without the pager
+
+====================
+     11-11-2026
+====================
+
+   * bionic
+e7504dec4 bionic: Make the hide hook cheap on the trace fast path
+
+   * device/oneplus/sm8850-common
+2cc6d43 sm8850-common: Pin 60 MB of the launcher
+
+   * frameworks/base
+0e1200d1e1b9 SystemUI: Show carrier 5G UC/UW icons for T-Mobile/Verizon/Spectrum
+47cdbca2c1b1 services: Only let the system set the three-finger swipe state
+82adb07f0b8e services: Clean up unused settings for three finger swipe
+0dc2485ffa04 services: Switch to binder IPC for three finger swipe
+595c303e4c35 Add three fingers swipe actions [2/3]
+2f4d26c8d663 libs: Bumping hwui shader cache for fewer fling stalls
+4483ba0c07c1 Duck RKP: Generate a missing keybox on its own
+6e5071062cf2 SystemUI: Decode the UDFPS animation off the main thread
+
+   * frameworks/native
+a643f635ce CompositionEngine: Report expensive rendering only for blur
+
+   * hardware/oplus
+beb794e nrmodeswitcher: Wait for the setNrMode response
+
+   * kernel/platform/kernel-6.12/vendor/oneplus/sm8850-modules
+6c5597d287 camera: retain fence monitoring and release refs on invalid-row puts
+83c0e90b14 wlan: restrict MLO connection-progress statistics guard to station mode
+53a823e6c2 wlan: bound HE and VHT rate indices before every table access
+
+   * lineage-sdk
+f3e381ec Add three fingers swipe actions [1/3]
+
+   * packages/apps/Remixer
+cd0584a Remixer: Add three-finger swipe down to Navigation
+4bf4104 Remixer: Open Snake from five taps on Ring sync's mark
+01baf8c Remixer: Add Snake
+e94d60b Remixer: Fall back to the expiry when no renewal time is set
+8b13d8a Show native Duck RKP provisioning errors
+5d9510c Show automatic Duck RKP provisioning status
+74fabdb Liquid Glass: Put lit lines behind the stage's glass, not bands of every color
+6bfbca1 Liquid Glass: Keep the selector lens inside the ringer's ends
+e7f5873 Liquid Glass: Keep the stage's clear glass off its sides
+2ea302d Liquid Glass: Center the stage's Touch and Motion scenes
+8fe628b Liquid Glass: Keep one background on each tab and card
+
+   * packages/apps/Settings
+e1739aad6d7 Settings: Start in-call vibrations off and say when they buzz
+0e92530424c Settings: Incall vibration option [3/3]
+a5c6d984147 Settings: Declare Remixer's Snake
+
+   * vendor/rr
+ec3462d2a rr: Stop publishing the Pixel canary fingerprint
+
+====================
+     11-10-2026
+====================
+
+   * device/oneplus/infiniti
+07258dc infiniti: DeviceSettings: Toggle the bypass tile from the real state
+
+   * device/oneplus/sm8850-common
+f264e39 sm8850-common: Don't panic on an RCU stall
+06ab502 sm8850-common: Keep lazy RCU on
+d6c050c sm8850-common: Drop the UFS CPU latency vote after boot
+4347c18 sm8850-common: Weight top-app and foreground like stock
+f6b1e12 sm8850-common: Use OnePlus's memory watermarks
+2a4e224 sm8850-common: Compress zram with lz4
+dba05c5 sm8850-common: Pass the stock kernel command line
+
+   * packages/apps/Remixer
+00a0c91 Liquid Glass: Deepen the stage's color bands
+8be408b Liquid Glass: Give the stage's glass its corners before it's drawn
+
+====================
+     11-09-2026
+====================
+
+   * frameworks/base
+b9fc19bd629e SystemUI: Draw the Glass clock as glass in Remixer's face picker
+a16dcc73f1ac base: Keep the Glass clock readable over dark wallpapers
+f646a751c0fb SystemUI: Give Quick Settings glass RR's sheen in the RR style
+2a9608ff11b7 SystemUI: Step the neon ring's spark at 30 frames a second
+8e0fe2077775 base: Send the glass light less often
+2614e661ce8a base: Spread glass blur evenly over its slider
+c7beaacf887b base: Add RR's lens edge as a second Liquid Glass style
+fef4a12b07be SystemUI: Bind a custom tile as soon as it is tapped
+f396c6dcebfb base: Let Settings read the wallpaper
+86cdca4dd10e SystemUI: Draw the Glass clock in Remixer's face picker
+d23f00ea6ccd SystemUI: Remove the last of RR's old Liquid Glass gates
+01a9312ce370 SystemUI: Blur behind dialogs only while they are flat glass
+20290efab1db SystemUI: Put the Now Bar and the USB island on Catalyxx's glass
+8c2d33c8f3d2 SystemUI: Draw Quick Settings glass from the new Liquid Glass settings
+8fbc5c7fa553 SystemUI: Keep glass on the volume panel that lies across the top
+12a649c2f84a base: Run Catalyxx's glass from RR's Liquid Glass settings
+b624ca641e00 SystemUI: No glass flash when a notification opens its app
+0e3e40c52867 SystemUI: Catalyxx glass on notifications in the open shade too
+4aceaf186f74 GlassClockView: Round the digits' outline with their bevel
+cc40b7045ec7 GlassSettings: frosted volume dialog, nav bar glass starts off
+f14d88994341 core: Start Catalyxx glass off for the launcher dock
+7eabf14a6652 SystemUI: Catalyxx glass: melt morphing panels into where they came from
+577a18d9c64f core: Let Catalyxx glass melt together
+e553e16de69a SystemUI: Catalyxx glass: notification glass follows its appear clip
+12c9c9dde46c SystemUI: Catalyxx glass: heads-up matrix under the row's own offset
+5b4171b95529 SystemUI: Catalyxx glass: heads-up drop from the display's cutout
+90bc23b2f3e7 SystemUI: Catalyxx glass: heads-up drip follows the notification
+95ed7fee4723 SystemUI: Reflow the morph engine's description
+a257c5a32089 SystemUI: Let the heads-up drop drip down before it spreads
+54281fb9ef65 SystemUI: Drip heads-up notifications out of the camera hole
+d1f4ce588958 core: Add the heads-up morph setting
+ccd5e959602d SystemUI: Animate Smooth notification morphs again
+6b753432ba70 SystemUI: Open and close notifications in glass's morph style
+826ec5558595 core: Add the notifications' morph setting
+419672b1964a animation: Show both windows' frames together as a tile moves to its pop-up
+2a8488af587e animation: Show a growing pop-up's glass once its tile has moved
+70c3db15f3a8 animation: Grow tile pop-ups on Catalyxx glass
+10706a24097a core: Add the tile pop-ups' morph setting
+d872a8aac80d SystemUI: Start glass's morph at the key and end it there
+8dd7bf4aa5d3 SystemUI: Grow the volume dialog and power menu out of their keys
+00d1d79ca9ef core: Add the glass morph settings
+d3767dc9f134 GlassSettings: Add Catalyxx Launcher's dock, folders and app drawer
+2db8e8430127 BackgroundBlurDrawable: Send a window's first blur when it's shown mid-frame
+227159cce99c GlassSettings: Add the navigation bar's glass
+27247a502734 BackgroundBlurDrawable: Let Catalyxx glass keep a fixed light
+dc72d1cc55af GlassClockView: Ask who the current user is only on the lock screen
+41d39c97562f GlassClockView: Read the lock screen's wallpaper off the screen
+d0d6b601b97e SystemUI: Add the Glass clock face
+0654b3f681bf core: Add the Glass clock face's view and settings
+bb416bdaa00b SystemUI: Find the slider knob's middle as a point
+a304d503973b SystemUI: Keep the slider lens on the knob, and let the ringer lens stretch
+62df396bccd4 SystemUI: Put the volume dialog's chosen ringer mode in a glass lens
+390b4d9e0ae7 SystemUI: Turn slider knobs into a glass lens while they're dragged
+b8db587d0544 core: Add the glass selector, selector magnify and stretch settings
+76fb635f3779 SystemUI: Keep the lock screen player's glass with it while it squishes
+545a889324b5 SystemUI: Squish glass under a finger, buzz on taps, fade the scroll edge
+dfdad258fc32 core: Add the glass squish, tap buzz and scroll edge fade settings
+13c54b6ae425 SystemUI: Make the music player's sparkle light its glass, not dim it
+13f23f7f5747 SystemUI: Keep the music player's effects from filling its glass black
+1257da789422 SystemUI: Give the music player Catalyxx glass
+b4befa9c13e5 core: Add how the music player looks with Catalyxx glass
+20756bec7175 SystemUI: Redraw notification glass when it comes back, and let it go
+a55ff2089938 SystemUI: Make notifications over the lock screen and apps Catalyxx glass
+8cabe6657d42 SystemUI: Light glass tiles up under a finger behind their icon and label
+e734d84f0ea7 core: Frost Catalyxx glass on notifications, which carry text
+278118762bbd SystemUI: Give Quick Settings tiles and notifications Catalyxx glass rims
+29ebefee2315 core: Light glass that apps draw themselves, and add notification and touch glow settings
+0c0f2f291b7f core: Move Catalyxx glass's light as the phone tilts
+1454cb8e25a9 SystemUI: Give bottom sheets and the power menu Catalyxx glass's rim
+54ba311b96da core: Frost Catalyxx glass that carries text
+c1d5c580f7e4 SystemUI: Let Catalyxx glass draw its own color where it has a rim
+6a005a9016e5 core: Let Catalyxx glass bring its own color, smoky over light content
+a3259460d65b core: Keep a blur drawable's outline while it's hidden
+d3ecdfab4fa1 SystemUI: Give the lock screen buttons Catalyxx glass's curved rim
+c2e9ebb694d8 core: Let GlassSettings make a glass look from setting values
+215b8caba7a9 SystemUI: Give the volume dialog Catalyxx glass's curved rim
+a664a85fdcb9 core: Let blur drawables draw Catalyxx glass with a curved rim
+021a8c8789df SystemUI: Fade the fingerprint button's blur with the button
+eec991af0b7b SystemUI: Tint Catalyxx glass with its color
+dabe9c5b361f core: Add a color and tint to Catalyxx glass
+bdd8c99138fd SystemUI: Blur the lock screen buttons with Catalyxx glass
+e252947b5e9d SystemUI: Blur the power menu, dialogs and volume dialog with glass
+118e2e6196cd SystemUI: Scale the shade's blur with Catalyxx glass
+5c20ef651a8d services: Let Catalyxx glass keep blur on in Battery Saver
+62cd0a715ac4 core: Add Catalyxx glass settings
+a8730dec7f40 base: Remove RR's Liquid Glass engine
+
+   * frameworks/native
+d2129f7803 renderengine: Draw the glass shadow only where it falls
+dfb65804a3 renderengine: Don't copy the screen for glass that only shows its blur
+860f5f0212 renderengine: Draw RR's lens edge on frosted glass
+88c3975e5a ui: Carry RR's lens edge in blur regions
+36dcc8731a renderengine: Catalyxx glass: frost right up to the edge
+4c1071fa44 renderengine: Keep a fixed light on glass that melts into fixed-light glass
+e53ceb111b renderengine: Melt Catalyxx glass together
+83b6b64c43 ui: gui: Carry how far Catalyxx glass melts in blur regions
+ed6284a587 renderengine: Draw or copy only the part of the display a blur reads
+4ff1f09939 renderengine: Keep the full blur under adaptive clear Catalyxx glass
+58ec69bcd3 renderengine: Blur clear Catalyxx glass only as much as it needs
+aa211f6c63 renderengine: Skip Catalyxx glass's rim work in its flat middle
+2ab6b00907 surfaceflinger: Let Catalyxx glass keep a fixed light
+fed0809a6a surfaceflinger: Let Catalyxx glass's light follow the phone's tilt
+0255ab26de renderengine: Light Catalyxx glass from the display settings
+230fb985e2 renderengine: Give Catalyxx glass its own color, smoky over light content
+69685128de ui: gui: Carry Catalyxx glass's own colors in blur regions
+cc0d7cc8f1 CompositionEngine: Don't copy blur regions in the planner's dump
+f654354527 renderengine: Draw Catalyxx glass regions as glass
+da5b36119c ui: gui: Carry Catalyxx glass settings in blur regions
+a18591f339 renderengine: Remove RR's Liquid Glass lens
+
+   * packages/apps/Launcher3
+b567baeb32 Launcher3: Let the Flatline glance move at rest
+24b96d476d Launcher3: Add the Flatline At a glance styles
+c7e1dbe98b Launcher3: Give Neon sign and Glass two rows in the home preview
+
+   * packages/apps/Remixer
+c453f96 Liquid Glass: One screen, with tabs under a pinned stage
+f26ab4e Spoof: Don't crash when the page closes during a fetch
+54add50 Liquid Glass: Move the page onto Catalyxx's glass engine
+4a3ce15 Remixer: Name the Glass clock face
+fe21659 Remixer: Keep saved slider values on their steps
+420736a Liquid Glass: Add Catalyxx Lab's live preview and Try melting
+
+   * packages/apps/Settings
+dc1ee26783a Settings: Add the Liquid Glass melt activity and preview permissions
+
+   * vendor/rr
+392166f79 rr: Leave Android 17's volume, power and lock screen blur flags off
+
+====================
+     11-08-2026
+====================
+
+   * device/oneplus/infiniti
+fa995b7 infiniti: Set the NA region so the AI cloud accepts our requests
+19f41e6 infiniti: DeviceSettings: Let Auto go up to 165 Hz
+621b5c9 infiniti: DeviceSettings: Show a notification while bypass charging is on
+dd3b154 infiniti: DeviceSettings: 144 Hz idles too
+b00e9d3 infiniti: Add the camera algo license files
+c81e0a2 infiniti: Let the modem recover from crashes
+4b587f4 infiniti: Use OnePlus face unlock instead of Sense
+c36924d infiniti: Extract the OnePlus face unlock HAL
+72891b3 infiniti: Extract libsensorbridge
+d59cf32 infiniti: Build the OnePlus camera
+cba2570 infiniti: Extract the Oplus feature flags
+ffa0f9c infiniti: update Oplus camera extraction fixes
+103ebcd infiniti: Keep stock face detection for the OnePlus camera
+ed5caa2 infiniti: DeviceSettings: 165 Hz idles too
+ed1c76a infiniti: DeviceSettings: Stop enabling the test-TE irq
+556514b infiniti: Leave the Plus Key to DeviceSettings
+ad01a65 infiniti: DeviceSettings: Translate the Plus Key and LTPO strings
+653b749 infiniti: DeviceSettings: Add the lock screen and AOD 1 Hz switch
+d992955 infiniti: DeviceSettings: Add the LTPO page
+60e7473 infiniti: Add the haptic profile picker
+71fe324 infiniti: Slightly boost soft haptic click
+f1b42da infiniti: Add haptic primitive profiles
+7509ea3 infiniti: vibrator: Add selectable haptic profiles
+279d681 Hide the legacy Assist key controls
+cb3ce2f infiniti: DeviceSettings: Add the Plus Key
+57747bc infiniti: Add DeviceSettings
+c8220ab infiniti: adfr: Drop the unread refresh-rate mirror
+c1f39df infiniti: prefer lower display modes for fixed-rate video
+3dce2b9 infiniti: allow SurfaceFlinger to read panel refresh rate
+6f82c87 infiniti: restore Oplus auto Qsync for LTPO
+dfb8148 infiniti: defer all ADFR min-fps floors until boot complete
+420d04e infiniti: avoid early ADFR min-fps enforcement
+f4affe8 infiniti: mirror Oplus real refresh rate
+375d3d0 infiniti: enforce user LTPO minfps floor
+91ab863 infiniti: add stock ADFR minfps support
+eee01f8 infiniti: Lunch rr_infiniti
+
+   * device/oneplus/infiniti-camera
+a2f38e6 infiniti-camera: Report the OTA version and product series
+5c4da6a infiniti-camera: Preinstall the other Gallery AI plugins
+7b33df3 infiniti-camera: Give the Gallery and AIUnit domains the DSP manager
+8ea6a24 infiniti-camera: Preinstall the Gallery AI eraser units
+5c3142d infiniti-camera: Let the camera and gallery apps reach hwservicemanager
+
+   * device/oneplus/sm8850-common
+029c417 sm8850-common: Recover WLAN on a firmware crash instead of panicking
+7800637 sm8850-common: Declare the HIDL mapper at FCM level 202504
+b8077ad sm8850-common: Include Dolby Atmos
+808f63a sm8850-common: Name the HIDL mapper matrix by its full path
+7e4c4bf sm8850-common: Bring HIDL back for the camera's mapper passthrough
+
+   * frameworks/base
+2dcdf72ed25f SystemUI: Read Now Bar scores from the At a Glance card
+d26913719ecc SystemUI: Drop the string form of weatherText that broke the enum
+01ba51965a21 FontController: Load the imported font for the rr-custom family
+c634ece80784 SystemUI: Show the weather in Flatline's idle readout
+cf6e3e1572f7 SystemUI: Show the weather on the 13 clock faces that had none
+ab89974a110f SystemUI: Let a clock face show one part of the weather
+
+   * hardware/lineage/compat
+138946d compat: Ignore the 16K page-size check for the 4K-aligned prebuilts
+
+   * packages/apps/Remixer
+7b55b19 Fonts: Import your own font
+cda407b Remixer: Say weather shows on every clock face
+
+   * vendor/extras
+8cc1e17b fonts: FontRrCustomOverlay for the imported font
+
+   * vendor/oneplus/dolby
+b545bd9 dolby: Ignore the 16K page-size check for the 4K-aligned prebuilts
+
+   * vendor/oneplus/infiniti-camera
+ee393c0 infiniti-camera: Preinstall the other Gallery AI plugins in AIUnit
+a0823bc infiniti-camera: Preinstall the Gallery AI eraser units in AIUnit
+
+   * vendor/rr
+32205abee rr: Keep other devices' repos out of the changelog
+
+====================
+     11-07-2026
+====================
+
+   * device/oneplus/infiniti-camera
+91586bf infiniti-camera: Fix the remaining camera sepolicy denials
+e9407a6 infiniti-camera: Ship liboplus-uah-client in system_ext
+
+   * device/oneplus/sm8850-common
+5ae5a1a sm8850-common: Relabel camera_remote_dump on boot
+34c36b6 sm8850: Let rr-rkp read the KeyMint retry timer
+
+   * frameworks/av
+a6717ccee4 camera: Conditionally silence vendortag missing errors
+7fef0ef3e9 libcameraservice: Get the camera extension object by symbol
+
+   * frameworks/base
+39ee0cc5f9cc SystemUI: Count the Now Bar call time on the always-on display
+380d6980f60e Duck RKP: Don't let an official keybox block device RKP
+cc18d34a1490 core: trickystore: Re-issue AKI on leaf re-sign, gate GENERATE on keybox
+d249e4eb6f40 core: trickystore: Fix spoof on binder chain probe
+3eb2e30effb7 Duck RKP: Describe the shared-buffer CSR commands
+65f9e477f9ea TrickyStore: Remove the superseded all-zero boot-key helper
+524fddc80d99 core: trickystore: Optimize RSA certificate signing using CRT parameters
+4e2d252d2d60 core: trickystore: Cache module hash and KeyMint version probes
+c0841a354e8c core: PixelDeviceRepository: Fix stallion sdk level
+6f2ebdf10653 core: trickystore: Derive attestation version from spoofed first API level
+bdcebedae07a core: trickystore: Emit legacy Keymaster encoding when HAL version is unknown
+67015e1d79cf core: trickystore: Harden software-attestation eligibility and leaf serial
+44af36a375cd core: pif: Keep the numeric release when the fingerprint says CANARY
+c07bb3276842 core: trickystore: Treat zeroed boot hash as missing
+57ec38360403 core: trickystore: Replace zeroed boot key with generated key
+5dae7fa16050 QuickSwitch: Disable the unselected launcher under a third-party home
+98ddb920739f Duck RKP: Ask OneKeyMint for a native V2 CSR
+
+   * frameworks/native
+bd8338866a libgui: Allow Num Buffer slots to be increased
+
+   * packages/apps/BugReport
+3bcca2d BugReport: Require a title and link to the report status
+
+   * packages/apps/Launcher3
+08bcdaea2d Launcher3: Turn a big folder to the page a dragged app lands on
+b9331ceb2a Launcher3: Space a big folder's apps out over its card
+5d288267e2 Launcher3: Show a big folder's page dots in place of its name
+7461ef3983 Launcher3: Grow a big folder less under a dragged app
+65349c036f Launcher3: Give big folder cards fixed round corners
+4742e3532a Launcher3: Let a big folder's card cover its rows
+962089f268 Launcher3: Add a switch to start new folders big
+b6703d432c Launcher3: Show each app's notification dot in a big folder
+34580a28d3 Launcher3: Swipe through the pages of a big folder
+a00f01983c Launcher3: Enlarge and shrink folders from the long-press menu
+e3f2576b7f Launcher3: Let a folder keep any size that fits the page
+989ef2a92f Launcher3: Fit three rows of apps in a 2x2 folder
+
+   * packages/apps/Remixer
+54a290d Remixer: Don't treat a status list without entries as clean
+
+   * vendor/gms
+b9fbee01 gms: Turn on Live Caption
+140bfddc gms: Give Android System Intelligence the UI intelligence role
+
+   * vendor/oneplus/infiniti
+46a06c1 infiniti: Import the camera algo license files
+eb1b16b infiniti: Use OP15 libsharebuffer_impl
+
+   * vendor/oneplus/infiniti-camera
+5d99894 infiniti-camera: Import liboplus-uah-client for system_ext
+
+   * vendor/oplus/opfaceunlock
+818018d opfaceunlock: Let the face HAL read camera_config_prop
+
+   * vendor/rr
+74310d93d rr: Read OneKeyMint CSR replies from the shared buffer
+a240b9a69 rr: Retry an empty OneKeyMint CSR as command 0x3125
+
+====================
+     11-06-2026
+====================
+
+   * device/lineage/sepolicy
+8d870ef sepolicy: Label ro.surface_flinger.panel_refresh_rate_node
+
+   * device/oneplus/infiniti-camera
+ffb0638 infiniti-camera: Fill in Photos' Hasselblad editor theme
+351127a infiniti-camera: Find Photos' ActionReceiver by path
+b7fd7f6 infiniti-camera: Use hardware/oplus's cameraextension AIDL library
+08c07a1 infiniti-camera: Keep platform apps on brokered DSP access
+40bc82a infiniti-camera: Drop the Gallery patches RR doesn't need
+c93f9af infiniti-camera: Find Private Safe's biometric checks by what they call
+c849b08 infiniti-camera: Add the 202604 compat ignore list
+0bddd8d infiniti-camera: Build only for infiniti
+e098fc4 infiniti-camera: Skip the ELF check on the 32-bit alog library
+d6e6ed3 infiniti-camera: Extract from CPH2747_16.0.10.601(EX01)
+09b5c11 infiniti-camera: Leave Live Photo buffers to the framework
+b0746e8 infiniti-camera: Let still captures keep out-of-order timestamps
+5728a86 infiniti-camera: Use the boot classpath oplus-fwk
+ab8907b infiniti-camera: Find the portrait blur classes by their strings
+51046eb infiniti-camera: Add Videos for Live Photo playback
+e891747 infiniti-camera: Keep the camera, Photos, AI and earphones
+
+   * device/oneplus/sm8850-common
+1963707 sm8850-common: Leave libsensorbridge to the device
+02d7333 sm8850-common: Fix Codec2 HAL manifest versions
+6f746c7 sm8850-common: Allow syshealthmon to read clocks
+ce8da37 sm8850-common: Enable EXPENSIVE_RENDERING hint
+eb060e5 sm8850-common: overlay: Use stock signal strength thresholds
+69275b4 sm8850-common: Use threaded Vulkan RenderEngine
+5542c23 sm8850-common: init: Let system write charger cool down
+82fb82b sm8850-common: let ADFR control doze refresh rate
+9f0072e sm8850-common: expose physical panel rate to SurfaceFlinger
+
+   * frameworks/base
+95ce623c8914 Haptic Remix: An edge light color per app
+4be1ce431bd5 Duck RKP: Try hardware V1 when OneKeyMint rejects the test MAC
+7d39b40e365b SystemUI: Round the USB island's glass
+24709378453d SystemUI: Let a setting override the keyguard max refresh rate
+6c44b7eb0090 SystemUI: Show a labeled pill for device key actions
+2680768a679d TrickyStore: Leave oversized attestation challenges to Keystore
+aaf55810ee91 TrickyStore: Stop serving apps while switched off
+
+   * kernel/platform/kernel-6.12/vendor/oneplus/sm8850-modules
+35436ca805 display: keep polled power and ADFR getters at debug level
+
+   * packages/apps/BugReport
+a9f53a0 Add a lock screen category
+
+   * packages/apps/Launcher3
+eab9497bad Launcher3: Give the 4x6 and 6x7 grids a drawer cell width
+
+   * packages/apps/Remixer
+7d1ca8d Haptic Remix: Hold an app for its edge color
+
+   * vendor/oneplus/infiniti
+971c377 infiniti: Import init.modem.rc
+a059a17 infiniti: Import the OnePlus face unlock HAL
+a9b6c9a infiniti: Import libsensorbridge
+fb40604 infiniti: Import the OnePlus camera's HAL dependencies
+f048ba6 infiniti: Import the stock ADFR and display feature configs
+
+   * vendor/oneplus/infiniti-camera
+9309bc1 infiniti-camera: Regenerate Photos
+adfdccf infiniti-camera: Import from CPH2747_16.0.10.601(EX01)
+
+   * vendor/oneplus/sm8850-common
+3c1cfd9 sm8850-common: Leave libsensorbridge to the device
+f9cc029 sm8850-common: Fix Codec2 HAL manifest versions
+1295d39 sm8850-common: Allow syshealthmon to read clocks
+96221e1 sm8850-common: Enable EXPENSIVE_RENDERING hint
+
+   * vendor/oplus/opfaceunlock
+3808f13 opfaceunlock: Split the enroll app from the dodge blobs
+
+====================
+     11-05-2026
+====================
+
+   * bootable/recovery
+65c3e68d recovery: Show the logo and install progress on the log screen
+5b79e6ad recovery: Drop the version number from the info card
+c2c5bd5b recovery: Resurrected Remix redesign
+
+   * build/make
+1ec6308cee core: Allow zstd for full OTA payload blocks
+26dd01b336 build: Lunch rr products through vendor/rr
+
+   * build/soong
+bf833d1c9 soong: Keep system partition fingerprint desc in sync
+c2fd1d35e soong: Keep system partition fingerprint in sync
+7d8592212 soong: Give every build a fresh build date
+c3a5fbdeb soong: Allow the LMODroid freeform boot jar packages
+98c96e628 soong: Allow the Oplus boot jar packages
+8bb0ac7aa soong: Follow vendor/rr and allow coloros inner packages
+
+   * device/lineage/sepolicy
+5b52c69 sepolicy: Read sys.boot.reason, not the neverallowed last boot reason
+3a10725 sepolicy: Let system apps read the last boot reason
+319b4fb sepolicy: Add rules for boot animation styles feature
+db71a44 sepolicy: Move in pocket service sepolicy
+8ef57cb sepolicy: Add support for LMOFreeform service
+8f6a9b2 sepolicy: Label the Play Integrity staging props
+d94b114 sepolicy: Complete ADPF allows for lineage-libperfmgr
+
+   * device/oneplus/sm8850-common
+7c9d88c sm8850-common: Give the vbmeta digest property a vendor_ type
+03ab170 sm8850-common: Leave face unlock to Sense
+fba5b42 sm8850-common: Package the Duck helpers with WITH_DUCK_RKP
+412dd76 sm8850-common: Include the reserved size config from vendor/rr
+
+   * frameworks/av
+207cbbfaac bqhelper: Let encoder input surfaces use more than 64 buffers
+736380bd66 libcameraservice: Oplus client handling
+2835757529 libcameraservice: Allow non-monotonic still-capture timestamps
+70bb91ba6b libcameraservice: Hand libcsextimpl its factory object directly
+c32518e7d5 camera: Provide fmt::v11 symbols for libcsextimpl
+18c02acf23 Implement Oplus user data handling for HDR
+5004e1aa02 libcameraservice: Conditionally allow bypassing camera buffer error if frame timestamp is decreasing
+20a61b0e38 CameraService: Add OnePlus camera extension support for zoom
+f3de1263fc Revert "Remove libheif source directory"
+9477dda677  HDR FIX. Enhance MPEG4Writer to handle Oplus user data with custom 'oplu' metadata atom in MP4.
+3b179d6e22 Add Oplus user data member to StagefrightRecorder
+36572fce00 Add kKeyOplusUserData to MetaDataBase.h
+79245e3a0e Add some logging
+
+   * frameworks/base
+b76312e683a9 Haptic Remix: Read the alarm pattern as the system
+b7765f7084f7 QuickSwitch: Recents and its permissions follow the selected launcher
+b0e675c2ead2 QuickSwitch: Start the service from SystemServer
+c50a9278fd95 QuickSwitch: Ask for the home role only about launcher packages
+f418807644ce QuickSwitch: Offer RR Launcher and Pixel Launcher only
+af652a53ea5d SystemUI: dt2s: ignore touches on windows drawn over the launcher
+e463451a41bb SystemUI: dt2s: Only handle focused Pixel Launcher home and skip widget areas
+d4fd51921c90 SystemUI: fix dt2s on App Drawer Search Bar
+4843587596f4 SystemUI: Implement double tap to sleep for Pixel Launcher
+9ebdd59daafb Services: Fixup pixel launcher exception in some cases
+4bd148029fd1 Fixup! stop QuickSwitchService from overriding third party as the default launcher
+e00d7533e136 QuickSwitch: Restore Ortus home switching on A17.
+4ebc4d4ab0dc services: Introduce QuickSwitch feature [1/2]
+fe4961998fa6 Now Bar: A changed Live Updates app list applies at once
+e0748f701603 QS: Report the settled QQS height so a slow release settles the panel
+a7e7b7f5b332 Looks: Roulette skips Looks that restart SystemUI and never spins twice in a row
+b6bed3f08ab2 base: Translate into the remaining Android languages
+cea5bed52acb QS: The customizer dock grows and folds smoothly
+b3378c19717c QS: Tiles glide only around a drag; a theme change fades the panel in
+a09154db661b Keyguard: Drop Lock Stage; Nightstand keeps a fixed bedside layout
+4787c3f011e4 base: Translate into European Portuguese and Traditional Chinese
+ad55d323a154 base: Translate into French, Turkish and Simplified Chinese
+ce16610fc76b base: Translate into Russian, Indonesian and German
+278a42395f52 base: Translate into Spanish and Brazilian Portuguese
+1f1b254a0258 base: Add translations
+c5be95d94398 Smartspace: Bring back the config plugin's switches the Google views read
+5596c0fbf7b5 Now Bar: Tell Intelligence the scores surface is showing
+b94dd0787e58 Lock Stage: The glance tile places At a Glance's date and cards
+4ace6a7c3a1c SystemUI: smartspace: Fix date/weather overlap with weather clock
+83934c3e81e3 SystemUI: Update smartspace to CP1A.260305.018
+43354529e31e SystemUI: Disable smartspace default view
+3c735a4e3643 SystemUI: Implement the newly reverse-engineered smartspace
+98ba8da68ecb Keyguard: Drop the fingerprint icon's glass blur once the keyguard goes
+83e8b2832603 Status bar: Slow the Flatline chip to half the clock's pace
+a2e612c0647a QS: The pencil opens the customizer on the panel
+1978bf2752a3 QS: A look per tile
+5896fc340f8c Status bar: The Flatline beside the time, inside the clock chip
+91f005aba4b0 Lock Stage: Up to three pages, swiped sideways on the lock screen
+5edeb0a1baae Lock Stage: Rebuild the section when the layout changes
+34ef61df90e6 Nightstand: A dim bedside stage on the always-on display while charging at night
+65aec8a1ff89 Looks: A quick settings tile and a roulette that picks a Look at unlock
+03bf8f3ac371 Edge light: A message sender's own color from Haptic Remix
+99542f344fa3 Haptic Remix: Match a message's sender before its app
+c27ef5b19316 Now Bar: Show connected earbuds and watches with their battery
+6793883a0e7a SystemUI: Private DNS tile cycles off, automatic and the provider
+186ba2ccb1a7 SystemUI: Add the Flatline Vitals and Signature faces
+a89c4354d4fd base: Add private DNS QS tile
+896f0c359721 SystemUI: Take live scores from At a Glance only, and log what it sends
+327340c62653 SystemUI: Lay the lock screen out from the Lock Stage
+285d5ce48b56 SystemUI: Add the Flatline clock face
+487e103022ba Haptic Remix: Play the user's patterns for apps, alarms, plugging in and unlocks
+24eb3dde2afc SystemUI: Ask Remixer for a Mode's Look when the Mode turns on
+45915bf883d2 SystemUI: Draw Live Updates in the Now Bar with their segments, short text and a pin
+a38657b7ab48 GlassTilt: Sample the accelerometer at 20 Hz in 100 ms batches
+a5ee79c52801 SoftwareMusicHal: Poll slower with the screen off and not in battery saver
+e8095a057fcd SystemUI: Tick the custom clock faces on the second and the minute
+3a4355a8cebd BatteryService: Read the Oplus fast charge type once, only on Oplus
+b3204078b3f0 BoostFramework: Renew the interaction hint once half of it is left
+d2507f3f141c SystemUI: Build the QS glow paints once
+34aafd48c622 SystemUI: Don't arm the Now Bar hold menu from a button press
+03a8c90ae157 SystemUI: Time out a quick launch fan that never gets its UP
+5e26a11c69bc SystemUI: Blur the spin recents backdrop off the main thread
+cc2038267894 SystemUI: Tell the clock feeder the same cover from a new one
+c2b56c05d98b SystemUI: Keep the Now Bar's album art and colors across state changes
+123fab5df022 SystemUI: Fetch Now Bar session metadata once
+8c6312395903 SystemUI: Don't index the Now Bar list after its swipe animation
+5db9ce681f97 SystemUI: Keep the charge history under the settings cap
+7a8b95a435f3 spoof: Keep mainline Pixels on their own identity
+1c3f3d2a6ba8 TrickyStore: Don't attest the all-zero boot key of an unlocked TEE
+2cdc4995284f core: trickystore: Align attestation version with KeyMint HAL
+43d59e0f54fc core: trickystore: Add MODULE_HASH support for KeyMint v4+ attestation
+51628c299c7b trickystore: Add a list of packages that don't need targeting
+25bb19185ab8 spoof: Don't auto-target new apps while TrickyStore is off
+16173e469107 trickystore: Keep the loaded keyboxes when none is usable
+55f829177b6e trickystore: Expose keybox and patch level validators
+8a19013af20a trickystore: Harden keybox parsing
+3c3a938da003 trickystore: Fix patch level template and date handling
+3b0db66dea13 core: spoof: Port TrickyStore, PIF and canary fetch fixes
+aa6f31410d4d SystemUI: Make the QS Volume tile a customizable slider
+f03db0293a03 SystemUI: Fade the Now Bar's glass with the lock screen
+0bd27312f69d FaceSense: Use this tree's BiometricScheduler constructor
+d11a3b38f9d5 Face: Do not throw exception if client does not support invalidation
+493a861572b6 FaceSense: Support private space enrollment [1/2]
+8912ca412bf3 core: exempt ParanoidSense from Privacy Indicator
+414e5661f78a services: Force load FaceSense providers
+3faee25aad8e FaceSense: Vibrate on successful authentication
+2bed8e933ce2 FaceService: Conditionally add ParanoidSense
+ede30e4e7d3e FaceSense: Pass the handler to BiometricLogger
+d6da43fae78f base: Initial SenseProvider for FaceSense service
+6ee6700f0f55 SystemUI: Add a Volume tile to QS
+26a86c7404ce SystemUI: Take paused songs out of the status bar chip and let them swipe away
+958d592528cf SystemUI: Make the Now Bar customizable
+26c0b6cba117 Duck RKP: Renew the keybox before it expires
+7bd2d53e6774 SoftwareMusicHal: Don't listen while the phone is playing
+188ae0a4c8e8 SystemUI: Drop the shadow behind the Now Bar
+0ba1c632edf1 SystemUI: Fix the QS Media tile crash when opening the app
+d2fb32fe06f7 PackageManager: Parse packages again after a flash
+86ac128c8828 SystemUI: Use the real monospace font in QS
+b56ac16bdc43 SystemUI: Keep icons visible with the QS Icon only fill
+fe219693bfc7 SystemUI: Show the real QS panel while customizing
+bed962485b44 SystemUI: Save the QS slider place with the theme's changes
+f27509e480c3 SystemUI: Remove the Mono QS theme
+28d779fb7891 SystemUI: Customize QS from edit mode
+d667cbc3914a SystemUI: Make QS themes customizable
+6b6d7b01ab54 SystemUI: Name the Media tile in QS edit mode
+d542ed625485 SystemUI: Hide the QS media card while the Media tile is in QS
+81150e55df1f SystemUI: Add a Media tile to QS
+c3ef11aa6e41 SystemUI: Declare the ambient indication permission
+0d4af3a78d46 SystemUI: Now Playing album art
+5ada6548744c SystemUI: Now Playing on the keyguard
+96ec54d1153e Power: Send perfd hints from their own thread
+9a29aa002713 SystemUI: Liquid Glass on the QS slider and media, QS media style
+a0a678b9b016 Power: Forward interaction and launch boosts to perfd
+c271bca419c4 SystemUI: Fade the shade blur with the dialog
+f63f208018df ImageReader: Give Oplus Live Photo a consumer with the OOS vtable
+b7e6f82f55d8 ImageReader: Hand Oplus Live Photo the BufferItemConsumer again
+053a124c3ca1 ImageReader: Hand Oplus Live Photo the IGraphicBufferConsumer
+ed6f87b53cb2 base: Allow configuring haptics for wake gestures [1/2]
+2ce85d7efd5a base: Allow showing Ambient instead of fully waking [1/2]
+530b03d63d34 SystemUI: Stop the Now Bar chip crashing on tap
+7fcfdb9aa327 services: Suppress double upgrade notification for cloned profile
+ee4dceb19689 core: hide clone targets from regular Open with
+ca592edbf723 SettingsLib: Make all user apps cloneable [1/2]
+ed4aaca8a553 core: appcloning: Enable app cloning building blocks by default
+861266d88137 spoof: Update keybox repo URL
+3b2337b47596 custom_rom_hide: Hide RR's com.resurrection packages from apps
+ccea5a634da8 custom_rom_hide: Hide ROM packages on core UIDs from unprivileged apps
+695625e3dce0 custom_rom_hide: Adding apps filter hooks
+b2a78b797a3b core: trickystore: Fix certificate post-processing warning
+1981b8d02e15 base: ApplicationPackageManager: don't hide Pixel features from Photos on Tensor devices
+9a8278fe3294 TrickyStore: Sign EC keyboxes with the low-level BC signer
+1a396f86f3e8 spoof: Gate Duck RKP behind ro.rr.duck_rkp
+a70a66cbe35b TrickyStore: Sign EC keyboxes with the default provider
+6f1524cbfde3 spoof: Allow a debug override for the Duck vbmeta digest
+beb1a4944e6a spoof: Fall back to a software Duck CSR when the TEE refuses
+965c4820700c spoof: Provision a TrickyStore keybox with Duck
+9fffc3206f47 SystemUI: Serve Now Playing in software
+3f08da67f501 SystemUI: Leave a Now Bar call off the lock screen
+cabbc6978034 zygote: Don't block app starts on a dead native zygote
+8b9e39b3918e SystemUI: Thin the neon ring so the level fits inside
+d2d3d1d9702a SystemUI: Declare the SuperVOOC ring overlay arrays
+631102507184 BatteryManager: Hide the OEM charger extras with a block tag
+5d61a61bc44e SystemUI: Larger circle batteries with the level inside
+ec94d77ba66d SystemUI: Play the SuperVOOC ring on plug-in
+57749039f177 SystemUI: Time to full, live decimal SoC and PPS in the SuperVOOC ring
+eca340661100 SystemUI: SuperVOOC charging ring
+35b498944568 BatteryService: Drop the unreachable 0x650A0013 SuperVOOC sid
+959db4b5e2a4 BatteryService: Map the 0x65005013 SuperVOOC sid to 100W
+62c75cf37647 base: Publish oem_fast_chg_type and oem_charger_watts
+4512cc187e79 base: adapt SuperVOOC lockscreen info for aston
+e47aedacdd7a base: Fix and improve lockscreen charging info for VOOC/SuperVOOC devices
+95cc13dc43ce BatteryService: Add support for oem fast charger detection
+5aeec04d8180 SystemUI: Remove the lock screen charging glow
+e8429f861ec7 SystemUI: Take the QS and volume look accent from primary
+7b0f75f06117 SystemUI: Bento, Shapes, Blueprint, Duo and Soft volume looks
+8562cb5412f2 SystemUI: Neon, Bento, Shapes, Blueprint, Duo and Soft QS styles
+9f4f191dd6bf EdgeEffect: Tap when a scroll runs into its end
+fbcf60ba079b SystemUI: Volume level in percent on every slider
+f3efbc32142e SystemUI: No slice date under custom clock faces
+88e1d902ae87 SystemUI: Keep Now Bar swipes away from the widget hub
+fab164517613 SystemUI: Keep power menu tiles two to a row at any density
+b4345b414824 SystemUI: Drop the USB island's countdown bar
+95d5ebd24d54 SystemUI: Fix the tiny fingerprint quick launch label
+f32554edc2d8 SystemUI: Make QS tiles follow the Liquid Glass material
+c742bf56cc63 SystemUI: Blur the horizontal volume dialog too
+657a51daabfd SystemUI: Turn the USB mode picker into an RR island
+e7cc98486671 SystemUI: Use binder-backed UVC support checks
+3c751ee900f3 SystemUI: adding usb prompt bottomsheet
+97f899c95d9d SystemUI: Give the power menu panel its own glass
+120c3a1c47d7 SystemUI: Blur behind system dialogs with Liquid Glass
+044bc6d1ed7b base: Move Liquid Glass highlights with the tilt
+c8d0fedbad79 SystemUI: Let Liquid Glass turn blur off per surface
+e8a1ff590c37 base: Drive window blur from Liquid Glass
+6236f05f50b9 PIF: Default to the Pixel 6a canary fingerprint
+6f1a3ba42b66 PixelDeviceRepository: Refresh the fallback prints and Pixel props targets
+569302023496 core: pif: Log early config fetch failure once without a stack
+679c9de98a58 core: pif: Fix writes to static final Build fields
+bef8ffdacea0 KeyPairGenerator: Ensure RSA_OAEP_MGF_DIGEST is always present for KeyMint 3+
+0e426474fc6c base: Drop RR's own spoof changes to test Evo's alone
+88315d1d16cc SystemUI: Clear every clock face box on the always-on display
+387ffa87395a SystemUI: Scaled clock faces stop cutting off their ends
+6a3e35deb87b SystemUI: The Now Bar only takes music off the lock screen itself
+4728d1143870 SystemUI: Neon volume panel stops covering its own sliders
+4af2b42909ec SystemUI: Quick launch takes the touch back from the UDFPS overlay
+f9a9d70753f5 SystemUI: Let the UDFPS overlay hand a held touch to a keeper
+c980f9b78592 SystemUI: Neon volume slider glows around its track
+304709425299 SystemUI: Now Bar between the lock screen shortcuts, One UI style
+e31f28b052a3 SystemUI: Live scores in the Now Bar from At a Glance or Smartspacer
+78c9bd6645ed SystemUI: Remove gesture anywhere
+2d62b7152ac1 FontController: Check debug logging once through the log tag
+7ed9040be58e ActivityThread: Pick up the system font before views hear about a config change
+8011c22e3909 TextView: Keep code-set typefaces and font resources when the system font changes
+347dc61b8883 TextView: Track the last resolved system font apart from the font family
+89025345e3f4 graphics: Fix crash in Typeface.changeFont() on non-placeholder statics
+2a1f4eb42d97 graphics: Repoint default Typeface placeholders on runtime font change
+2bcdfad51527 FontController/Typeface: fix variable-* font override, base resolution and weight variants
+8e45fde4ea9e Adding dynamic font feature
+e51227db59db SystemUI: Remove the themed notification app icons option
+e533c9558d6e SystemUI: Show the gesture strip while Remixer sets it up
+7e79405f7b55 SystemUI: Draw single-line clock text in face previews
+3687aef5da07 SystemUI: Volume panel slider looks, Classic RR across the top
+8d5bc6d70f8a SystemUI: Animate the charging glow
+db9e2fdab4c4 SystemUI: Quick launch watches the lock screen for the sensor touch
+b372cb6382b4 SystemUI: Keep the media player off the lock screen with the Now Bar
+093f721a899f SystemUI: Put the Now Bar below the device entry icon
+d843e70df2a2 SystemUI: Dump the Now Bar's items and view state
+6f389e170073 SystemUI: Volume panel looks tint the panel instead of replacing it
+29bd833e978b SystemUI: Big percentage battery, neon ring options and tile ring
+448fcc41e5c5 SystemUI: allowlist ACCESS_NOTIFICATIONS privileged permission
+944dbac10418 SystemUI: Now Bar settings item opens the Now Bar page
+7ebda351d826 SystemUI: Charge report curve, charger and history length
+9dc4f2d08a86 SystemUI: Feed the active media session to MediaSessionManager
+0552a53d4ab1 SystemUI: media: Fix NPE when there is no artwork
+d5c78072a290 SystemUI: Add MediaSessionManager and WeakListenerManager
+9b165ed9f695 SystemUI: Fix the build
+52c41116cfba SystemUI: Add RR volume panel looks
+984d422c62e7 SystemUI: Read every recorded sample of a gesture
+5b4da5497687 SystemUI: Add the neon ring and slim pill battery styles
+a77f8c51a44a SystemUI: Add gesture anywhere
+ae6cc8bcf7fb SystemUI: Add pie controls
+e472c859c287 SystemUI: Add charge reports
+d47c97fdfff0 SystemUI: Add RR clock looks to the status bar clock
+b4ad2913a637 SystemUI: Add the Now Bar
+d686ae076932 SystemUI: Add fingerprint quick launch
+05877a1112d5 SystemUI: Add edge light moments
+11cad17955f6 SystemUI: Add the lock screen charging glow
+39c5240777f3 bootanimation: Crimson glow is now the default file
+2f44579acf0a SystemUI: Show screen-on time since the last full charge
+534dfb0e54ac SystemUI: Show OmniJaws weather in the status bar
+e7284db7b1f4 SystemUI: Add RR clock chip styles
+7abed9f1509a fixup! sb features
+d9a3f0d73f63 SystemUI: Add customization for bold clock and period separator
+7db13e8ed2eb SystemUI: Add transparent mask clock mode for gradient chip [1/2]
+b7fc72887bca SystemUI: Add support custom color for clock chip [1/2]
+aaf7ef7d058b SystemUI: Fix static color in clock background chip styles
+ed3764c2aaad SystemUI: Do not set white only for outline bg clock styles
+11b6182386d4 SystemUI: Statusbar clock background chip styles [1/2]
+f68616d8aba5 SystemUI: Statusbar clock background chip [1/2]
+190b0ee33876 Statusbar clock customizations
+5845b7d0267a bootanimation: Use RR's boot animation styles
+8d578478dd06 BootAnimation: log selected style and stop re-evaluating a stale static path
+ba0f91703cca BootAnimation: Fix race condition for custom animations on encrypted devices
+1e86f52faa44 Add more bootanimation styles [1/3]
+c2b4cfa58086 Bootanimation: Use property_get for retrieving bootanimation styles property
+ee3c8fbfe65f BootAnimation: Add option for custom bootanimation
+b7bc6959faa7 Introduce bootanimation styles [1/3]
+4dcdb24daf9f bootanimation: Disable themed animation
+c61d14661d5e core: Use blue area for pocket mode illustration
+f6a28075647e SystemUI: Implement pocket lock check for faceunlock
+2b4d87832b40 services: Start pocket mode service only if supported
+68b6d22b0f17 core: Refactor pocket mode interface code
+d5b2f76b787d base: Ensure pocket sensor is wakeup
+642323eadfd4 base: Allow to define custom pocket sensor value
+2385cfe0c3da PhoneWindowManager: Pocket Judge: Don't mess with power button to reject call
+49b6652eb602 pocket: Fix PocketManager crash when constructed off main thread
+850109150ec6 base: Pocket Judge: Don't go to sleep while on call
+e08a2090f85f PocketJudge: Allow to register vendor proximity sensor
+53c77e908c82 PocketLock: Make using light sensor optional
+f5ddef5c0bb9 SystemUI: Improve pocket mode layout
+8786de542cc4 base: Redo Pocket mode view like OOS
+b2e652dce0d7 Fix an edge case in KeyguardUpdateMonitor pocket callback
+6a4cbd6b9385 PocketJudge: allow register vendor pocket sensor
+524dcfff49d6 PocketLock: fix flickering on animations
+ecf6d8b9c222 Pocket lock: Add config_pocketModeSupported overlay
+30ff5bd41bca pocket: introduce pocket bridge
+91d41094670e pocket: Reduce sleep timeout for pocket lock
+830c5efdbe0f pocket: Use MD2 lock drawable
+2cbfcbed46d2 Pocket lock improvements
+2779f9ea6131 pocket: Fix pocket lock view for display cutouts
+663b59e50ebc pocket: Adjust sleep timeout for pocket lock view to 10 secs
+2624c94e4293 PocketService: Adjust light sensor rate to 400ms
+e7d2c994bcad pocket: Add hardware acceleration and properly maintain SYSTEM_UI flags
+5549a835b356 policy: introduce pocket lock
+98cf15ce711f pocket: introduce pocket judge
+537676fe51af SystemUI: Draw clock face previews for Remixer
+62cbe3f920e2 SystemUI: Remove the lock screen widget leftovers from the clock style port
+ea5caf4b92e0 SystemUI: Keep the small clock in step with smartspace in both directions
+d73caab01ce9 SystemUI: Rework keyguard element ordering and clock barrier handling
+259637967a22 SystemUI: Clock style custom gradient color support [1/2]
+b52e511df8da SystemUI: Add colorOS big clock style [1/2]
+29d7aace3adf SystemUI: Add NOS4 clock style [1/2]
+7eb6eb71a1f6 SystemUI: Add color min on neu3 clock
+f4fb9049a756 SystemUI: Preserve per-view alpha through wobble animation
+4dacb80241ce SystemUI: Reduce ios clock bottom margin
+0fc1fc28353c SystemUI: Add weather in neu3 clock
+a2c2052ef84b fixup! SystemUI: Fix default lockscreen view shown when custom weather enable
+7a6f303ebbe2 SystemUI: 4 new clock styles [1/2]
+eba3008fa21e SystemUI: Improve custom clock layouts
+932ec56313f9 SystemUI: Allow change clock horizontal position [1/2]
+4753c72169bf SystemUI: Fix tag corruption in clock color apply
+9e29c24b6946 SystemUI: Increase lockscreen clock top margin limit to 200 [1/2]
+d5b414c2b0a3 SystemUI: ClockStyles: Remove setting center layout programmatically
+202ddef65768 SystemUI: Reset clock color when media playback stops
+740dde0bdc51 SystemUI: Boost clock style album art color saturation
+0ea2f7e5abaa SystemUI: Add clock style wobble charging animation [1/2]
+e9b9166fdcfd SystemUI: Fix clock container height not shrinking on scale < 100%
+43600a2868c6 SystemUI: Reduce some clocks bottom margin
+ff2a6a9b9062 SystemUI: Fix clock scale overflowing layout
+f4a497ca14df SystemUI: Add album art color override for lockscreen clock [1/2]
+c4df039218c6 SystemUI: Move weather next to clock date
+3454a91ceb86 SystemUI: Fix weather text not following custom clock color
+ed899575d18d SystemUI: Match custom clock weather text with date
+1cb3cbf35dda SystemUI: Add new clock styles [1/2]
+1c51404767ce SystemUI: Refactor Aod style for perf
+df89f476801f SystemUI: Refactor clock styles for perf
+20436f7d6e0a SystemUI: Fix up and improve clock styles
+774cbfb33494 SystemUI: Add weather in some clocks [wip]
+aada905e0409 SystemUI: Add more clocks
+0a459b3a8666 SystemUI: Add 2 colon clocks
+c86b7b537763 SystemUI: Introduce new oem like clock styles
+3ebb2ede213b SystemUI: Fix custom clock scale clipping
+9cd84af48cfc SystemUI: Tune some clock layout
+8262ff340ed3 SystemUI: Prevent the clock font from resetting after long idle
+9a86c9061dba SystemUI: Add new OOS clock
+eea6471ead7f SystemUI: Disable smartspace when using custom clock
+24860addb10f SystemUI: Add custom clock aod transition [1/2]
+c69ded921559 SystemUI: Added new clocks style (1/2)
+a357e395a5fc SystemUI: Use small clock when setset clock style
+475f91ce2e4e SystemUI: Keep lockscreen Smartspace enabled state current
+9e31bf98c1cc SystemUI: Move Clock style keys to settings
+74e751f6ff44 SystemUI: Import stylish clock styles
+d7b1dcdb5e02 SystemUI: Fix custom clock text color overriding
+5134e7b89a76 SystemUI: Allow change custom lockscreen clock size [1/2]
+3757f29e66ff SystemUI: Add block and bubble to no-color exclude list
+6a3cfd844e10 SystemUI: Add bubble clock
+5e8f38858d18 SystemUI: Added minimal Block clock
+0b36c9007397 SystemUI: Enforce white color on all clocks in aod
+65db9990fcbf SystemUI: Restore AOD clock updates via Handler-based minute tick
+fcc4b7a2bbdf SystemUI: Apply clock opacity at 70% during AOD/dozing
+7d593a4a73ef SystemUI: Fix opacity handling for all clock style components
+9224b731a13f SystemUI: Add support custom clock color [1/2]
+0ecf3de06434 SystemUI: Allow adjust height of lockscreen clock styles [1/2]
+eab35a4bacfa SystemUI: Refactor clock and widget implementation
+989c06595602 SystemUI: Adapt weather view to updated omnijaw controller
+c59f5527323e SystemUI: Fix default clock omnijaw view
+39132cfbb4b2 SystemUI: Set life clock at middle
+5eff497df7fc SystemUI: Added android 9 style lockscreen clock
+61c3c0701c98 SystemUI: Improve clock face color option
+72b33edfb966 SystemUI: Lock Screen Clock Accent Color Option
+f65c5a4f3a66 SystemUI: Simple analog clock
+6a05118d9115 SystemUI: Add Encode clock face
+5bc087a3f5c7 SystemUI: Add Android Q clock face
+1926cbc72f45 SystemUI:: Added life clockface
+cd1a9ce77d4a SystemUI: Add NOS3 clock style
+749cfda360ce SystemUI: Add 3 new clock face from iconify
+be0e2248772d SystemUI: Add number clockface
+bb4a7a31044f SystemUI: Add ios like clock
+947925a7b4ca SystemUI: Added Label clock style
+fdbe9957332a SystemUI: Adapt lockscreen features to the latest A16 keyguard changes
+7bd1308c7fa9 SystemUI: Introduce AOD styles [1/2]
+1c5fa6f06921 SystemUI: Introduce Clock face feature
+196c54fcacd0 SystemUI: Implement Weather views
+932da197d1e1 SystemUI: Add grayscale tint to weather icon in AOD
+de721b61d36a SystemUI: Allow Omnijaw weather to show on aod
+fdc509b4a87b SystemUI: Add pixel style lockscreen weather based OmniJaws
+fa3a6429ddab LockscreenCharging: squashed (1/3)
+549716fe2a2e SystemUI: Let Remixer choose notification app icons
+dbbd34b3aaa5 SettingsProvider: Allow a default theme customization
+cd0087bcf761 SystemUI: Draw the edge light above the light reveal scrim
+d8c142c70cec SystemUI: Blur the app behind the spin recents wheel
+a6875c2dd042 base: Attest Wallet with a stable identity when KeyMint cannot
+61493c4cdd00 Optimize AbsListView to reduce click operation latency
+5f7e9272c6d1 touch: support tunable scroll touch slop.
+d3227ff2cbd8 SystemUI: Add Clear Voice QS tile
+e4fe76ff9bed SystemUI: Wire edge light into RR
+d834f1f38d92 SystemUI: Disable edge light glow intensity by default [1/2]
+37fe6930957b SystemUI: Improve edge light glow
+044d5368679f SystemUI: Add edge light glow effect [1/2]
+558df0f16359 EdgeLight: Use dozing status from provider directly
+675719de37a7 EdgeLight: Make it work independent of ambient display notifications
+32782791e529 EdgeLight: Update effect animator
+94147cd5ebe6 EdgeLight: Do not run two moving effects at once
+d47bba5ecfac EdgeLight: Introduce EdgeLight animation style
+2c2e9411bd22 EdgeLight: Add animated flowing rainbow gradient
+a6fad49bfdbc EdgeLight: Set initial stroke width once in init
+200641c7b79c EdgeLight: Improve rainbow color implementation
+7db868f49dac EdgeLight: Add rainbow gradient color mode
+2f6f08e405f2 EdgeLight: Do not set paint alpha every frame
+78f3298d7cb3 EdgeLight: Add 4-side rounded style option
+592235a9ed51 EdgeLight: Allow customizing stroke width
+e362f55dfe9b EdgeLight: Allow customizing pulse count
+3501d87d8307 EdgeLight: Remove animator when finished
+af49508e300d EdgeLight: Rework color handling and remove redundancy
+3ad2923396ba EdgeLight: Allow granular color modes
+163c2bc667e6 SystemUI: Add edge light feature
+70e8c403ec83 base: Generate a certificate when attestation keys are missing
+87a08cf5266b base: Spoof the PIF build identity for Wallet and TapAndPay
+112b4f441f51 SystemUI: Grow the Circles media card into the tall layout
+4251de13a02b SystemUI: Keep QQS off the lock screen at boot with face bypass
+1ae6a7979f3e SystemUI: Replace the accent hue with saturation
+51fdf51893b7 SystemUI: Let Remixer turn the accent hue
+20788934155b SystemUI: Fade the lock screen media card as QS expands
+272d48e7b733 SystemUI: Stop squeezing the media play icon
+f2e2555c201b SystemUI: Share the Circles media card between QQS and QS again
+f18216111c91 SystemUI: Keep face unlock skipping the lock screen with media
+9b45f26f53c4 SystemUI: Hold the Circles slider space while values load
+5eca9bf95378 SystemUI: Make the lock screen media play button bigger
+b48f04e4e297 SystemUI: Stay on the lock screen for media with face unlock bypass
+0440d02555b2 SystemUI: Don't relaunch the task already in front from spin recents
+af473c081bd7 SystemUI: Don't share the Circles media card between QQS and QS
+f12cd1fe50ef wm: Add API to listen for secure content in display
+9c240ea66513 SystemUI: Add a next button to the styled QS media cards
+97d1df4bdeb7 SystemUI: Keep lockscreen media with face unlock bypass
+537299f007a9 SystemUI: Put Circles brightness and volume sliders by the media card
+45516b2d9562 SystemUI: Lay out the QS media card per style
+504f52ef19ff services: Add freeform system service
+c60553afef8d base: Add support for LMOFreeform service
+58feb2f19113 SystemUI: Style the lockscreen media card
+23ee76ca31f3 SystemUI: Style the QS media card with the QS style
+eb6e9be444a6 SystemUI: Add Quick settings styles
+b8af14a3cbbd SystemUI: Restyle the shutdown and restart screen
+5a9b49046811 SystemUI: Redesign the power menu
+2c9f04680d2c Partially revert "Fix for the lock icon issue"
+cce597665396 SystemUI: TunerServiceImpl: Safe concurrent iteration and modification
+b9a3bbb6c62f SystemUI: Allow using tuner API for Global settings
+116cfc6ec387 SystemUI: Allow using tuner API for LineageSettings
+956a932a5bb1 SystemUI: Take the UDFPS animation scale from AuthController
+1a794fc42f39 SystemUI: Add status bar and QS header clock sizes
+cd137cd3c676 SystemUI: Use RR's Utils for the UDFPS resource packages
+4cdc354479dc SystemUI: Play UDFPS animations for biometric prompts
+35ee0f01d399 Add support for UDFPS icons
+b4a8615c9243 Bring back UDFPS animation [SQUASHED]
+e383fb1b17b7 SystemUI: Fix face unlock indication static calls
+8c6860def62a FaceUnlockImageView: Prevent statusBarStateController memory leak
+052597b6055c SystemUI: Add face unlock icon to keyguard blueprint
+fb817ae0cd2a FaceUnlock: Remove background behind indicator on lockscreen
+b2c3da0ee773 SystemUI: Implement bouncer face unlock animation
+507edcc6bebc SystemUI: Use proper tint for face unlock icon
+b6557637cc01 SystemUI: Implement face unlock recognition animation and text
+ca1517d38acd ignore factory reset protection (FRP)
+d8ba362b6695 SystemUI: Compute the tri-state dialog scale factor locally
+7efb343bdd70 SystemUI: Port the alert slider tri-state dialog to Android 17
+1faeef308138 Add Alert Slider user interface [SQUASHED]
+02195f0505f9 SystemUI: Render accent presets as tonal spot at the seed's chroma
+e274d2257675 SystemUI: Allow the content theme style for accent presets
+01dc994aa6c5 SystemUI: Read pulse immersive state from CommandQueue
+56404af66605 SystemUI: Rename the ROM to Resurrected Remix
+9d13826b748d SystemUI: Take restart row colors from framework resources
+7776e17076b3 SystemUI: Let Remixer lighten or darken the accent palette
+0b0c1339f0a8 SystemUI: Redesign the advanced restart menu
+fd84e12995ca SystemUI: Run pulse in its own overlay window
+c235a30ebe64 SystemUI: Draw the QS header image
+bb23540535e0 SystemUI: Add QS Header Image customization [1/2]
+3e6097a9826e SystemUI: Add slim recents and rename the wheel to spin recents
+c356db85d30f base: Rename the spoof port from Evolution to RR
+1186b9e8f43d base: Add method to restart SystemUI
+ff8730f039ac SystemUI: Open slim recents from the overview proxy
+c43c0750795a base: Let Settings change overlay packages for Remixer
+35bf8675b5ff GamePropsSpoofService: Replace Pixel 10 Pro XL spoof profile with Pixel 11 Pro XL
+3da096dfbc42 base: GameProps: Treat empty config as loaded
+8cc06d60692e keystore: Don't force NO_AUTH_REQUIRED on TrickyStore imports
+63659385fd37 spoof: Stage build type, tags, description and flavor for DroidGuard
+eb9a11000cb1 TrickyStoreService: Match revocation list serials
+0a710824e44e spoof: Rework PIF and TrickyStore, add native refresh
+600147605b49 trickystore: fix KeyMint 3+ detection vectors in GENERATE mode
+dc13e8c7687d wm: Allow the signed PixelSystemService to observe tasks
+fcc0a34ae094 PixelPropsUtils: Use Unsafe to bypass final field write restrictions
+88e7dfd6d3b2 PixelDeviceRepository: dedupe fallback data, add stable-build fallback
+f1f23af49f49 security: pif/trickystore: align vending spoof with upstream, harden reflection and keybox validation
+5a8df2b9469b core: Fixing spoofing issues
+8d18ed7600cc GamePropsSpoofService: absorb PerAppsPropsUtils and fix lifecycle bugs
+532358561921 core: PIF: align spoofing behavior with upstream PlayIntegrityFix
+eb2bbe890e5a core: Sanitize keybox xml before loading
+8d02f262bf53 core: Fix and remove deprecated api in certificate generator
+ee309a73aa05 core: Improve parsing keybox xml with StringBuilder
+977ab27adb83 core: Fix spoofing structure
+a2a98a731b0c core: pif: skip SDK_INT spoofing for vending process
+99078b4e202e core: Fix json parsing non-string values in PIF
+45ae5afdf1cc core: Move trickystore, pif and game props spoof
+e8cb165c05c3 core: Drop redundant Photos spoof
+604ae489033a core: Improve spoofs entry point
+87decf8b0354 core: Fix stackoverflow in trickystore port
+4ab6e8b4a37d core: Add play integrity spoofing
+6d9d27fc59f2 core: Add game spoofing
+0ea27eca21bb core: Fix broken tee cert generation
+9f57d41ad661 core: Fix vbmeta digest abnormal state
+0a61d94f2f37 core: Add tricky store port integration
+d13f545d8781 PixelPropsUtils: activate Mosey/Quick Share via GMS spoof in PP targets
+5d763872297a PixelPropsUtils: Refactor spoofing flow, cache settings, add dynamic profiles
+bc8da466b808 PixelPropsUtils: Move from props to Settings switch
+73aa1e8cf639 core: Introduce per-apps spoofing [1/2]
+9db800b4e28e PixelPropsUtils: Implement Play Store spoof (spoofBuildVending()) [1/2]
+9c8385e08828 PixelPropsUtils: Skip play Integrity props in isolated processes
+74408aa00019 core: Dynamically inject Tensor features for Play Store compatibility
+2c043d0563a9 System: Switch Tensor feature handling to user-controlled override
+e0f88de18846 ApplicationPackageManager: Drop tensor spoof prop
+e2ee2d429be8 Only spoof packages installed by Aurora Store and modify new API
+c5ab2c592ba9 PM: Force all packages as installed via Google Play Store
+325bb502484e PixelPropsUtils: Implement json-based game spoofing [1/2]
+e92da854d639 [SQUASH] Introduce PixelPropsUtils
+98cdfc9f4318 base: Add pulse, slim recents, and header settings
+f7a3803b5120 Frameworks: Enable VoNR by default
+d295b8c1cba9 ImageReader: add nativeGetConsumer for Oplus Live Photo
+e784bc038ea2 core: AHardwareBuffer fixes for oplus camera
+8df3f8425a3c display: Drop fusion ALS hard-zero samples in auto-brightness
+735d5dfb8dfe DisplayManager: also forget the slider offset on the screen-off reset
+7726c4002c5e DisplayManager: optionally forget the manual brightness set on screen off
+d424655674aa SystemUI: Fix volume panel not showing in legacy keyguard mode
+
+   * frameworks/native
+5f3762149e Disable useless Keystore features
+33ec2c1784 renderengine: Bend the sharp scene at Liquid Glass edges
+3899b3bbf9 surfaceflinger: Light Liquid Glass from the tilt sensor
+50a1d32e3c renderengine: Add Liquid Glass to background blur
+a07ddb0a65 build: Fixing dalvik|art|usap tuning regressions
+34a94b5de8 build: Adding 8gb/12gb/16gb dalvik heap configs
+a086eb890a nativewindow: Recognize Qualcomm vendor YUV formats in formatIsYuv
+c87fb39b3a surfaceflinger: RefreshRateOverlay: optional panel refresh rate source
+b98fac6f9c sensorservice: fusion: force virtual dispatch for the fusion handles
+9f856723d6 sensorservice: fusion: latch RGB path and remap ExtImpl's -1 handle
+51a2103f4a sensorservice: Drive the fusion engine's onSensorFound + SensorDeviceExt
+081bbfd1d0 sensorservice: Load the OPLUS fusion light sensor (dodge)
+
+   * frameworks/opt/telephony
+510f3a638d telephony: Recover NR Advanced when OEM PCC reports band 0
+
+   * hardware/oplus
+bf26156 interfaces: Drop the unused MmWatermarkScale import
+8c5dff7 oplus: Translate into the remaining Android languages
+caf74b9 oplus: Add translations
+6cdadf2 oplus-fwk: Encode APS HEIF input as NV21
+c436275 oplus-fwk: Add com.oplus.media.OplusHeifWriter
+ae26a5a sepolicy: qti: Leave UFF face labels to opfaceunlock
+dcb2440 oplus-fwk: Add the share sheet's shortcut loader and prediction wrappers
+53be21f sepolicy: use lineage libperfmgr path
+86d8200 oplus-fwk: Stub Melody / HeyMelody Bluetooth APIs
+a3d6ad0 oplus-fwk: Fill the remaining oplus classes Melody links against
+eb17914 oplus-fwk: Add the OplusActivityManager background restriction stub
+23ee41e OplusPermissions: Drop the signature gate on Melody's IOT perms
+6caa0c6 oplus-fwk: Make OplusViewSeamless.AnimationCallback a class
+ae24faf power: Stop DOUBLE_TAP_TO_WAKE from aborting the Power HAL
+5cd7f47 oplus-fwk: Implement OplusImageHdrImpl over android.graphics.Gainmap
+19a0d41 oplus-fwk: Implement OplusWindowManager.getScreenshot
+2fd203b oplus-fwk: Give OplusMultiUserManager the id-based multi-system check
+3066cf1 oplus-fwk: Give IdProviderImpl the getOUID StdID reflects for
+f560d85 oplus-fwk: Add the customize restriction manager
+12896e9 oplus-fwk: Add the OplusJobInfo job constraint wrapper
+daa8c04 vibrator: Switch haptic profiles to salami stock effect tables
+97a26d0 oplus-fwk: Report the real ColorOS API level and fill the classes that unblocks
+ab7e993 oplus-fwk: Declare the oplus vendor permissions
+82de91c oplus-fwk: Match the real osense background-running signatures
+0792187 vibrator: qti: Prefer FF effect streams for haptic profiles
+cbd7fdb oplus-fwk: Stub MediaFile for Gallery video export
+cc2a3a8 oplus-fwk: Expand EventConfig stub for AIUnit OSensePublisher
+6a26e38 sepolicy: allow ISensorFeature to write ssc_screenshot_info
+4531f7d Revert "[TEMP] sensors: aidl: Glorified one-shotting"
+004282c sepolicy: Label the haptic profile property
+da555ce vibrator: richtap: Remap AOSP effect ids to RichTap prebaked ids
+73f903c oplus-fwk/sepolicy: Stub SurfaceExtImpl; Gallery→horae binder
+60f0c95 oplus-fwk: Stub OplusCfgFilePolicy for AIUnit on AOSP
+42729c8 sepolicy: dontaudit system_server HIDL get-then-fallback probes
+97028c9 sepolicy: Let system_server talk to the oplus displaypanelfeature HAL
+aeb14e5 vintf: Declare the stock oplus vibrator HAL interfaces
+2955c45 sepolicy: Label early_wakeup on sun's card0-sde-crtc-N paths
+2a48be0 Add toggle for ltpo features
+e0bcd29 Alphadroid
+a04d7d8 oplus-fwk: add gallery-share icon helpers + ViewWrapper (fix blank share items)
+e5cca5f Revert "oplus-fwk: add missing OPlus camera framework stubs for OnePlus 11 (salami)"
+93ace1b oplus-fwk: add missing OPlus camera framework stubs for OnePlus 11 (salami)
+4a29608 Revert "KeyHandler: Add support to toggle torch"
+3cc7ce9 FixUp: Fix broken Android.bp merge in oplus interfaces
+5462e8c oplus-fwk: Wire up OplusBlurParam blur path for OplusCamera
+ce0dc78 oplus-fwk: Add OplusBlurParam and OplusCanvas for OplusCamera
+eb7c67d sepolicy: Move regionmark property to exported
+667b5c5 oplus-fwk: Update feature config manager
+4c756d2 Add stub startBackgroundRunning
+d7116b2 oplus-fwk: import full OOS-16 camera framework from dodge-camera-port
+a166ac6 oplus-fwk: import OOS-16 base classes from dodge-camera-port for camera port
+b9cd31a sepolicy: Add dolby support
+17c51e8 sepolicy: Label audio props to avoid denials
+48ce74d sepolicy: Label project name prop
+0b2a8ac sepolicy: Solve vendor_hal_perf_default denials
+a70f8f6 sepolicy: qti: Allow system server to detect oem charging
+59d0aec sepolicy: adress fingerprint denials
+799f666 sepolicy: qti: Allow system_server to r/w oplus_chg nodes
+73202dc sepolicy: qti: Allow binder calls for sensor hal to system_server
+1e3d1c0 sepolicy: Fix bluetooth denial on user builds
+cc81c06 sepolicy: Fix hal_bootctl_default denial
+e320f8f sepolicy: Address DeviceSettings and fast charging denials
+d438035 hardware: hidl: inscreen: Set thread to high CFS priority
+14548f1 sepolicy: Address various denials
+9deb65d sepolicy: Label hal_charger service
+a2f35ba overlay: qssi: Update QSSI RROs from CPH2573_11_A.76
+b44341b sepolicy: Address nfc denial
+c67e94b sepolicy: Allow vendor_hal_perf_default to access surfaceflinger
+f816c8e [TEMP] sensors: aidl: Glorified one-shotting
+75c188e aidl: sensors: Return early if nothing is displayed over the light sensor
+60bd857 aidl: sensors: Import AlsCorrection from sm8150-common
+10a4fb2 Import ALS capture service from sm8150-common
+940dcac overlay/sensors: Configure Doze brightness sensor
+ac053ea overlay: qssi: Define quick_pickup sensor string
+034aee2 overlay: qssi: Enable config_dozePulsePickup
+9fae979 sepolicy: qti: Label sensors AIDL multihal
+af8800e aidl: sensors: Standardize qti.sensor.amd to glance sensor
+9c936a7 aidl: sensors: Invert value for pickup gesture event
+32d2665 aidl: sensors: Change standard tilt_detector to pickup_gesture
+bf4f4fc aidl: sensors: Avoid target name conflicts
+51882ad aidl: sensors: Change default applicable license to Android-Apache-2.0
+288b907 aidl: sensors: Import 2.X sensors hal proxy
+49479b8 aidl: sensors: Revert^2 "SensorHAL: add moisture detection"
+a5a710c aidl: sensors: Import aidl sensors MultiHal
+ba24550 interfaces: Fix IPerformance V1-V3 definitions
+7154bff interfaces: Fix cammidasservice power factor arrays
+92db81d interfaces: Fix IPogoKeyboard methods
+e1eecd4 interfaces: Fix IMIDASService transaction ordering
+e7d1ea1 interfaces: Fix IOplusImsRadio methods
+0ad7feb interfaces: Fix IOplusRadio one-way transactions
+4a11f2e sepolicy: qti: Add hal_oneplus_face domain for the face service
+
+   * hardware/qcom-caf/common
+38e37f7 libqti-perfd-client: Disable the stub with a Soong bool
+c14f0ca libqti-perfd-client: Skip the stub when sun ships the stock client
+36228f1 compatibility_matrix: Add optional Dolby DMS HAL
+
+   * lineage-sdk
+e495e58c lineage-sdk: Accept the neon ring, slim pill and big percentage battery styles
+3ca3740e sdk: Rename the ROM to Resurrected Remix
+fdcc9ca7 sdk: Keep boot working on a settings database downgrade
+
+   * lineage/scripts
+927a8ea scripts: Read product vars from vendor/rr
+
+   * packages/apps/LMOFreeform
+0cbb0ec Sidebar: Allowlist the exact alarm permission
+c25d2d9 LMOFreeform: Translate into the remaining Android languages
+d634c9c LMOFreeform: Translate into European Portuguese and Traditional Chinese
+d758690 LMOFreeform: Translate into French, Turkish and Simplified Chinese
+d0ee203 LMOFreeform: Translate into Russian, Indonesian and German
+8abfe82 LMOFreeform: Translate into Spanish and Brazilian Portuguese
+4d35107 LMOFreeform: Add translations
+db29939 sidebar: Accent handle, handle sizes and a tools row
+4db0ae3 sidebar: Add the RR glass and neon looks
+
+   * packages/apps/Launcher3
+732201beda Launcher3: Drop the rotation resource Voltage now defines
+04ea8cd27e Launcher3: The lock state only touches the icon when it is a chip
+de5ef20cf5 Launcher3: Only the launcher's own widgets can toggle the radios
+f662a30028 Launcher3: Themed icon tuning sits by Neon, shows with the Themed style and previews real apps
+576a5378d0 Launcher3: Neon is a pack in the icon picker, with a way back to the app's icon
+5209726639 Launcher3: Minimize per-frame allocations and calls in RecentsView
+b332a33935 Launcher3: Minimize per-frame allocations and calls in QuickstepTransitionManager
+5a8dd2980f Launcher3: AllApps: Minimize hw layers only when necessary
+2b2a75a3e2 Launcher3: RR's widgets take the neon look, poll lightly and can toggle data
+f6c05834b6 Widgets: Update colors
+e9136be292 Improve tile widgets structure
+1b166a74f5 Rising Widgets: Add wifi/data/bt widgets
+2f7bee3274 Launcher3: Introduce RisingOS widgets
+bd0a874936 Launcher3: Four overview buttons fit one row
+6d763050f6 Launcher3: Add smooth press animation to all action buttons
+42a6069488 Launcher3: Improve overview buttons colors
+e4e540a5a6 Launcher3: Increace overview buttons transparency
+3abd57a545 Launcher3: Redesign the overview buttons
+60d14add9c Launcher3: The recents swipe action uses RR's gesture state and needs LMOFreeform for a window
+85c26dcae0 Launcher3: Add split screen option for Recent app swipe action
+58b9a05fff Launcher3: Add scale-down visual feedback for freeform gesture
+bbf7d570d1 Launcher3: Use ticking vibration effect for freeform gesture
+c47c61a8d9 Launcher3: Add swipe up gesture for freeform mode Introduce a new gesture in the recents/overview screen. Swiping up & hold on a recent task will now launch the application directly into a freeform (floating) window. This feature ports the original Xposed logic authored by ZL114514 & refactored by Mahmud0808 from the PixelLauncherEnhanced project to be natively integrated. Replaced Xposed method hooks with direct native launcher calls.
+823c11a099 Launcher3: The task menu still needs Toast for Kill app
+ddfd049b35 Launcher3: Clear all leaves locked apps alone
+d92f7ff7b8 Launcher3: make lock gesture toggleable
+fe820d2b63 Launcher3: Make the recents lock task-menu action dynamic
+a0c81f31db Launcher3: Add locked-state visuals to overview app chip
+7e79d33efe Launcher3: Add dynamic lock icon swap on app chip bar
+77a37f6dcb Launcher3: Polish the swipe-to-lock pill
+31c6e9a612 Launcher3: Implement swipe-down-to-lock in Recents overview
+95c6c40980 Launcher3: Stack, iOS and OxygenOS join the one Recents list, with an accent front card
+3389383e8d Launcher3: The recents corner slider reaches open cards
+58e8cbe848 Launcher3: Add recents task corner radius setting
+5cef05f6e8 Launcher3: Fix stack recents dismiss reflow
+78f061b797 Launcher3: Fix custom recents animations and OxygenOS stacking
+ba689010e8 Launcher3: Remove recents view animation styles on tablets
+57e57c1aec Launcher3: Apply custom recent view styles immediately
+62a5e07d96 Launcher3: Add custom recent view styles
+07d1b128da Launcher3: The drawer layout switch gives its rebind a reason
+1c9ec99411 Launcher3: Introduce CaddyCardSelectorPreference in app drawer preferences
+5ab8dacc5e Launcher3: Add app drawer folder support
+a75210b6da Launcher3: Allow set Custom folder thumbnail
+20f1d74728 Launcher3: One icon's size and name are set from a Resize row
+136d9e909d Launcher3: Implement resizable workspace folders
+249bb7921e Launcher3: Add per-icon home screen resizing with saved size overrides
+62dbaa05da Launcher3: Style icon picker as a blurred bottom sheet
+ae0a1daeae Launcher3: Add icon search support in custom icon
+2a1c88e15f Launcher: Add per-app icon picker
+ad7ca10dde Launcher3: Import the constant the overscroll haptic uses
+38d6d7bea2 Launcher3: Add app rename feature
+fb93f912f4 Launcher3: Set default fling velocity scale 25
+88ffe1c9ad Launcher3: Trigger overscroll haptic on spring start, not end
+baffbd4466 Launcher3: Implement configurable spring-based bouncy overscroll
+8a539481b9 Launcher3: Add spring-based bouncy overscroll to app drawer
+c756c275cf Launcher3: Add blur for homescreen popup menu
+7b2f10363d Launcher3: The dock search bar is drawn by the launcher unless a widget is picked
+862a68b050 Launcher3: Fix potential NPE with QSB layout
+a2edddd700 Launcher3: Add AI search icon for Gemini
+6313fb0f5d Launcher3: QsbLayout: Set up icons in uniform way
+65e211e740 Launcher3: Adjust QSB width to align with hotseat
+60a0ef008d Launcher3: Fix crash when using QSB with taskbar in landscape
+b94e5c5352 Launcher3: Allow setting stroke width for hotseat search bar
+f9572ceeba Launcher3: Allow setting transparency for hotseat search bar
+19d4736e05 Launcher3: Make google icon in dock searchbar clickable
+c8ab16873e Launcher3: Add ability to change corner radius of Dock search bar
+be33bb2c22 Launcher3: Add toggle to theme dock searchbar icons
+cf7854ab63 Launcher3: Enable lens icon for dock searchbar
+45d7db8fd4 Launcher3: Implement Hotseat searchbar
+d166a87003 Launcher3: Set themed icon scale default value 100 [2/2]
+03fdd163cb Launcher3: Themed icon customization [1/2]
+db918cbd26 Launcher3: Count badges draw their own shadow
+977846d24d Launcher3: The added grids use RR's default layout and folder style
+498adcb26c Launcher3: Fix custom color not working in Legacy Fullscreen mode and improve consistency
+4129a45d2f Launcher3: Fix custom color not working in OneUI style (vertical paged) and refine fullscreen behavior
+c11bcb39fe Launcher3: Implement advanced color picker with HSB and RGB controls for app drawer background
+9925a6ba5f Launcher3: Allow custom background colors for the app drawer
+ff0fc6758a Launcher3: Add notification badge counts
+9ae8d49ebb Launcher3: Allow to always show page indicator dots
+4fd96df64c Launcher3: Add 6x7 app grid
+2e70c16bdc Launcher3: Restore 4x4 workspace
+34b6753744 Launcher3: Add 4x6 app grid
+dc04318b40 Launcher3: Translate into the remaining Android languages
+307e1306be Launcher3: Translate into European Portuguese and Traditional Chinese
+5a1458837c Launcher3: Translate into French, Turkish and Simplified Chinese
+0689c589ee Launcher3: Translate into Russian, Indonesian and German
+ba8bd4b81b Launcher3: Translate into Spanish and Brazilian Portuguese
+ea3e461dda Launcher3: Add translations
+a6662eb49f Launcher3: Drop Liquid Glass
+bee0a2e9d5 Launcher3: Liquid Glass long-press menus and dock
+455845df2f Launcher3: Let Liquid Glass turn blur off for home and recents
+46504cc5bc Launcher3: Icon style choice and neon icon options
+2f8975e30b Launcher3: Add the neon icons switch
+35fdf99137 Launcher3: Let swipe up and hold over the Google feed reach recents
+77d5fdb0f7 Launcher3: Stop re-adding QuickSpace to the first page
+44baa2609a Launcher3: Let swipe up work over the Google feed
+c9e5a846fd Launcher3: Give the Neon sign and Glass glances two rows
+40c6eb3ac0 Launcher3: Add the Glass At a glance style
+1b3ddf04bc Launcher3: Add the Neon sign At a glance style
+708c2e2d2d Launcher3: Add the Orbit At a glance style
+ac0868955f Launcher3: Let any QuickSpace layout bind its own data
+70baa448cc Launcher3: Let Pixel Setup open the All Set screen
+998ab2d119 Launcher3: Drop the Voltage branding
+9e681e0d60 Launcher3: Build against the RR framework
+5983749e3d Launcher3: Remove the Storage and Contact Scopes shortcuts
+fd21682d54 Launcher3: Hide the floating window shortcut without LMOFreeform
+588d3fca90 Launcher3: Rename the ROM to Resurrected Remix
+f0a8803710 Launcher3: Send the overview gesture to slim or spin recents
+d89522f86c Launcher3: Support recents blur in RecentsActivity
+4eed67a516 RotationHelper: Account for mForceAllowRotation in setIgnoreAutoRotateSettings
+710c4cbf19 Launcher3: Add resource to allow rotation
+eff5d99c5f Launcher3: Fix hotseat side spacing when the search bar is disabled
+29d9060de2 Launcher3: Let home/back/recents be always long clickable
+350017c870 Launcher3: Don't double-apply top inset to All Apps search bar
+d68822adb8 Hide app search results of profiles in quiet mode
+a11fa0d081 Launcher3: Handle home button double taps
+c7f39bd1ac Launcher3: Inject events for taskbar long press actions
+b689f926c6 Launcher3: Implement auto open keyboard in drawer setting
+5158d6759d RecentsView: Unconditionally hide split option for Go-enabled targets
+4ef1e8af67 Launcher3: Fix sorting in zh-Hans-CN
+14a4e815d9 Disable all caps from Personal and Work tabs
+ae3816ef6e Update search icon to match Settings
+
+   * packages/apps/LineageParts
+4d95f27 LineageParts: Translate into the remaining Android languages
+085210c LineageParts: Translate into European Portuguese and Traditional Chinese
+7ccdb9b LineageParts: Translate into French, Turkish and Simplified Chinese
+67b8dc4 LineageParts: Translate into Russian, Indonesian and German
+e5b973e LineageParts: Translate into Spanish and Brazilian Portuguese
+2a9e8f4 LineageParts: Stop sending stats to LineageOS
+7f49877 LineageParts: Add the big percentage battery style
+1e5c0c8 LineageParts: Add the RR neon ring and slim pill battery styles
+c521aed LineageParts: Add status bar and QS clock size sliders
+a03ddc2 LineageParts: Rename the ROM to Resurrected Remix
+d416d92 LineageParts: Show Resurrection Remix in the English settings title
+
+   * packages/apps/Settings
+fabf35c022d Settings: Drop the posture guidance strings LineageOS now carries
+dd2df0307bc Settings: Take the Pixel Launcher hint overlay helpers from RR's Utils
+13dfe1a34fe Settings: Support hiding gesture hint in NexusLauncher
+0a373250552 Settings: Add PixelLauncher to allowlist for settings search
+f4ffde2944d Settings: Translate into the remaining Android languages
+eda0e93f413 Settings: Add the Settings style picker activity
+f8e473acc4a Settings: Drop the Lock Stage activity
+25b89d79cb1 Settings: Translate into Spanish and Brazilian Portuguese
+e73b0cb4e9e Settings: Add translations
+5dacca2d7e0 Settings: Open the Nightstand page
+54c969db762 Add the rest of Cloudflare and Quad9 Private DNS options
+f1eac31a7de Settings: Add more DNS providers
+772995e0a0b Settings: Add AdGuard DNS as a private DNS Provider
+ff444a68d0e Settings: Fix custom Private DNS hostname being overwritten
+a8dbfbfa9da Settings: Declare the Lock Stage page
+381e016aa9a Settings: Declare the Haptic Remix page
+eaa856d3975 Settings: Open Remix Modes and take Look requests from SystemUI
+21225a97aa0 Settings: Build Clear Voice only when the device asks
+255e94c339d Settings: Add a posture guidance page for face enrollment
+cb36ca9cef6 Settings: Keep the face intro and education for Sense
+f3d114ad0ae Settings: Open Remixer's Now Bar show page
+d02ae1bbc57 Settings: Add a Now Playing row to Sound & vibration
+50a1bc09af6 Settings: Turn Settings back on in clone profiles that lost it
+44b8f3913be Settings: Allow configuring haptics for wake gestures [2/2]
+5a06ae46a6a Settings: Allow showing Ambient instead of fully waking [2/2]
+89b92202be5 Settings: Move to lowercase of "Apps" in Cloned Apps title
+d534d20d355 Settings: Enable app cloning
+3e227b60d3f Settings: Make all user apps cloneable [2/2]
+d4161f1f638 Settings: Make AppCloning independent of DeviceConfig
+b6ec900d484 Settings: Drop the clone profile app hiding from CloneBackend
+94beaa435e4 Settings: Open the installed ringtone picker
+d2a781eb595 Settings: Add config to display Now Playing
+e774c5237f5 Settings: Don't show the clone profile's system apps in the drawer
+1a51714960e Settings: Switch homepage layout for style v1
+89b543adcbe Settings: Don't rubber-band the homepage at the end of a scroll
+aa3ec54f1a0 Settings: Accent edge and icon on the RR search bar
+90d03922f89 Settings: Move the RR homepage rows into category pages
+02dc94420ea Settings: Float a thinner search bar at the bottom of the homepage
+5bd88cf8b16 Settings: Drop the gesture recorder
+4b5ccdd24f1 Settings: Declare the look editor
+3b437341842 Settings: The app sidebar entry in Apps opens Remixer's page
+81397381a7e Settings: Hide Pixel Clear Calling from Sound
+707153093db Settings: Open Looks from rrlook: links, declare the look scanner
+84095dd77bc Settings: Declare Remixer's weekly backup job
+bce7ac714cb Settings: Open Remixer's Now Bar, backup and charge report pages directly
+0e2813fca09 Settings: Declare the gesture recorder
+c5e8bc2b22b Settings: Declare the Remixer Looks page
+e2820cfb78a Settings: Android version opens Ring sync
+4313960fb5f Settings: Declare the Remixer quick launch page
+42a941f585b Settings: Declare the Remixer boot animation picker
+aff4f5e95ab Settings: Declare the Remixer clock face picker
+88f027d465b Settings: Draw other apps' homepage entries as accent rings
+c8bd41d8744 Settings: Show the haptic profile picker in Vibration & haptics
+262f81283d6 Settings: Use the live neon ring entries on the RR homepage
+df59a40a3e9 Settings: Wire Oplus Clear Voice from vendor/oplus/clearcalling
+e098506cf37 Settings: Apply the RR row layouts on About phone
+32ceb3afe27 Settings: Hide the account header above the About phone banner
+35eb9f88aab Settings: Lay out About phone for the RR redesign
+14562828634 Settings: Declare the Remixer QS style page
+27f1e8010a0 Settings: Keep the original homepage as a style
+fcf21d7ea77 Settings: Show the RR maintainer under Android version
+67e8a3efadf Settings: Declare the Remixer UDFPS activity
+aef609911d4 Settings: Declare the Remixer fingerprint picker
+54f4307e120 Settings: finish face intro when vendor enroll returns skip
+d446e3e3312 Settings: Finish hidden face intro after vendor enroll
+a8f9c26dd54 Settings: Skip AOSP face intro when vendor enroll is set
+d77d0a670b0 Settings: Title the homepage device group Extra settings
+2f0cfda1adb Settings: Add a device group under the homepage header and drop the footer
+129eb324974 Settings: Redesign the homepage
+3752b6b806c Settings: Use the collapsing toolbar theme for Remixer pages
+ff082222761 Settings: Keep Remixer section fragments and give Remixer its icon
+09f5af6353e Settings: Compile Remixer and its spoofing screens
+96af87cffb8 Settings: default Lineage min refresh picker to 1 Hz
+
+   * packages/apps/SetupWizard
+00b3434 SetupWizard: Keep the first-boot accent
+23cd250 SetupWizard: Rename the ROM to Resurrected Remix
+ea5fdc2 SetupWizard: Call the OS Resurrection Remix
+
+   * packages/apps/Updater
+e624d12 Updater: Drop the translations repeated by the rebase
+c8b7c96 Updater: Remove the ROM version
+87a55ae Updater: Translate into the remaining Android languages
+be4fa5f Updater: Translate into European Portuguese and Traditional Chinese
+a0b376b Updater: Translate into French, Turkish and Simplified Chinese
+0c701aa Updater: Translate into Russian, Indonesian and German
+6851fd7 Updater: Translate into Spanish and Brazilian Portuguese
+f3621f4 Updater: Add translations
+1100f69 Updater: Show the update as a Live Update
+935a455 Updater: Point help links at the wiki
+7714a34 Updater: Point help links at Resurrected Remix
+f6a861b Updater: Get updates from dl.resurrectedremix.com
+8374b9a Updater: Offer a Remix backup before installing
+e0240df Updater: Remove the What's new card
+b2fd527 Updater: Check the Resurrected Remix OTA repo for updates
+565c1c1 Updater: Show the update's changelog and the build maintainer
+27e81e0 Updater: Redesign the update screen
+800b9c2 Updater: Rename the ROM to Resurrected Remix
+4be9336 Updater: Resurrection Remix branding
+afbd2b9 Updater: Keep the Lineage package and update dir
+59e0876 Updater: Restyle the update screens
+ff4685a Updater: Keep the SDK and patch level through a download
+2c246dc Updater: Flatten to a Soong android_app layout
+b4a4290 Updater: Ship Compose tree as com.alpha.updater
+4035246 Updater: Adapt colors in lottie animations
+4883d40 Updater: Add device name in card
+60c1811 Updater: Add device metadata info and links
+0e5ea9d Updater: Update header card for crdroid
+8306021 Updater: Adapt json parsing for crdroid
+841b4a9 Updater: Remove cryptographic signature verification for local updates
+1b73ebe Updater: Initial adaption for crdroid
+ce2d557 Updater: Call the OS Resurrection Remix
+
+   * system/media
+5435d318 audio: Add AxionFX and Dolby DAP effect UUIDs
+
+   * tools/extract-utils
+f86e786 extract-utils: Point the multi-device example at vendor/rr
+
+   * vendor/oneplus/infiniti
+efced81 infiniti: Pull LFS objects from GitHub
+
+   * vendor/oneplus/sm8850-common
+e6fe3e8 sm8850-common: Leave face unlock to Sense
+
+   * vendor/rr
+ab9342d88 rr: Ship Lawnicons as Launcher3's themed icon map
+1e2172ea7 Import themed icons from lawnicons
+c56893442 overlay: Updates from lawnicons 2.6.0
+50b54bdcd Initial vendor checkout for stable release
+20600163b rr: Remove RR_VERSION and ro.rr.version
+fcf85ee6b rr: Read the OTA device fields from vendor/OTA/device
+39dd4cad0 rr: Drop overlay product variants that have no default
+33d99c1f8 common: Add the translations overlay
+e6a29ee27 rr: Add more translations
+8d134d349 rr: Translate into the remaining Android languages
+5081601bb rr: Translate into European Portuguese and Traditional Chinese
+a12f471ab rr: Translate into French, Turkish and Simplified Chinese
+0db169b1c rr: Translate into Russian, Indonesian and German
+49642ec13 rr: Translate into Spanish and Brazilian Portuguese
+80fd63fbf rr: Add translations
+67ca6016d overlay: dps: update device config overrides
+0e41fa991 config: Keep 2M of logcat per buffer for bug reports
+8360be1ea overlay: Enter deep Doze half an hour after the screen goes off, not three minutes
+5c1160d88 config: Speed-compile Settings
+37ee98503 config: Drop the stale DSP source flag from SimpleDeviceConfig
+3ce907652 nowplaying: Let ASI write its switch through PCS
+817d67b41 config: Export TARGET_USES_OPLUS_CLEARVOICE to soong
+6ce811533 envsetup: Run a device's setup_kernel.sh in build_kernel
+6c45ef71d config: Remove Seedvault
+afa7ba926 overlay: Default to the Google backup transport
+a6ecf6f34 rr: Build Sense face unlock on phones without their own face service
+505e0765f rr: Add the Flatline welcome screen to Pixel Setup
+79a3a4350 nowplaying: Turn listening on through ASI's own switch
+853caba0d nowplaying: Listen through the sound trigger model and drop the QS tile
+6e5eefaf9 rr: Add the bug report app
+ea7ae0403 rr: Run background dex2oat with four threads
+cd4c3777d rr: Point OTA download links at dl.resurrectedremix.com
+17f1f202e config: Turn on the gestural navbar overlay on first boot
+27392f414 rr: Leave Launcher3 blur_on_more_surfaces off
+c69b97da7 config: Keep RR apps out of clone profiles
+fc2d7f0a9 config: Add WITH_DUCK_RKP
+6ab27f78f rkp: Add the KeyMint V1 CSR helper
+78010b274 config: Let apps see Play services and the Play Store
+f2956bbdf config: Enable Now Playing through ASI
+9467fddea config: Turn on Now Playing
+b31a39172 config: Keep background dex2oat to two threads
+70f00c949 config: Boot into RR red with gesture navigation
+1d05a1cf0 Enable background blur support by default
+da7f3bd1e rr: Enable Android 17 blur on volume, power, lock screen and Launcher3
+6c3f3b9c4 config: Use Evo's bluejay canary fingerprint to test Evo's spoofing
+c9c031c94 config: Update the bluejay beta fingerprint to CP41.260831.016
+d2d6402d4 config: Require the private keys on official builds
+c4d209865 Drop committed Python bytecode and ignore __pycache__
+0b716d4e5 config: Keep Gallery2
+22c724d30 overlay: Point Smartspace at Android System Intelligence
+a2c501cb9 bootanimation: Drop Lineage's generated animation
+b2ece490f config: Inherit the themes from vendor/extras
+d9c83c9d2 prebuilt: Drop the unused classic boot animation
+adb3cf414 prebuilt: Move the RR font files to vendor/extras
+dfea61746 overlay: Move the default wallpaper and accent to vendor/extras
+9ace055b7 config: Drop Lineage's boot animation
+4980a5e32 config: Ship the boot animation styles
+934c8a747 rr: Fit the default wallpaper to phone screens
+bbbe85202 rr: Default to the crimson RR wallpaper
+66eec6a14 rr: Start on the Resurrected accent
+e2db0f1d7 rr: Write the changelog as a text file like AlphaDroid
+225855620 rr: Hide Pixel Clear Calling from Sound settings
+81058bf6a rr: Drop boot I/O prefetch
+500eaecac rr: Turn on boot I/O prefetch and the USAP pool
+8ab958a66 config: Take the fonts from vendor/extras
+607182e16 rr: Build the OTA json the way AlphaDroid does
+696bf24e6 config: Spoof BuildFingerprint as Pixel Beta
+491ceb2cd rr: Ship Stitch
+bcc857465 rr: Point Pixel Setup at Launcher3
+f45c42da5 rr: Read the OTA changelog from the standalone RR repos
+2861a44a5 rr: Ship LMOFreeform
+50842562a rr: Make the Compose media flag read-only
+63d8ba5a4 rr: Enable Compose media controls
+a8f8035db rr: Write the OTA json with a changelog
+36fe31ab2 rr: Add RR_MAINTAINER and the build variant prop
+5da982d9e rr: Print a build banner when bacon finishes
+5a2264b60 rr: Use zstd for full OTA payloads
+60de8dbe9 rr: Build the UDFPS icons and animations on UDFPS devices
+8312ce14b rr: Build the RR fonts, OmniStyle and OmniJaws for full phones
+eb86099f4 rr: Drop the version number from the zip and About phone
+ddc61d3fe rr: Build as OFFICIAL by default
+0bd7d0116 rr: Rename the ROM to Resurrected Remix
+29861d5aa rr: Ship Vivi Music and RR Wallpapers
+25809bbbc rr: Include GMS on full builds
+b7342c002 vendor: Rebrand the Lineage 24 vendor tree as Resurrection Remix
+
+====================
+     11-04-2026
+====================
+
+   * frameworks/base
+c7baaf80b3d9 Defer disassociation of revoked CDM associations until user unlock.
+f1f588a20806 Fix BAL bypass via pinned windows in SDK sandbox and PCC
+e5456503b329 Verify callerUid in AccountManagerService Session.
+c8d35eea865d Check URI permissions for media artwork loading
+f9f34ddb8695 Fix BAL bypass in RemoteViews SetRadioGroupCheckedAction reapply
+234b90f329bf Always clear listener before setChecked in RemoteViews
+af58c4a0eb57 Avoid showing Volume Panel when the device is locked
+fd27d2a6fc57 Clean up ownership transfer metadata on user removal
+05a773e61b03 Fix dropping of all policies on parsing IllegalArgumentException
+9cf9037f33a0 Fix IllegalArgumentException under PackageSetPolicySerializer
+741b33c5a3fd Use association userId for system data transfer operations.
+1b80bcc8b29a Fix crash in getOverrideLocaleConfig when package is not found
+976051570acc Limit DPC app restrictions to a global maximum of 1000 packages
+534d97df6910 Fix lock-screen bypass via default USB functions on timeout
+3ffda00206f0 Return USE_OPACITY if the insets source window is being animated
+a00136ad6e88 Enforce permission in notifyPictureProfileHandleSelection
+ab05fbe60e6b Fix shell command vulnerability in WindowManagerService
+8aea3f91bf46 Revoke SYSTEM_ALERT_WINDOW visibility when AppOp reverts to MODE_DEFAULT
+8a9bf3ee5c43 RESTRICT AUTOMERGE: Sanitize MusicFx broadcast intents and restrict receivers
+e1a9b2b3ef58 Prevent starting FGS from background via usageTimeReport
+d496b40c09d0 Allow device admin install only in internal storage.
+05d3fe3ed52e Cap oversized icons loaded via PackageManager to prevent crashes
+4a8b09973669 Preserve calling UID for HeavyWeightSwitcherActivity
+cde047e1ff67 Add rowBytes=0 handling
+b244037ae5e6 Add per-package channel creation limits to NLSs
+39c6bbaa057f Inherit lock state when updating notification channels.
+29499b802fd6 Redact sensitive task info when caller lacks getTasksAllowed
+7e28d9638808 Add creator tokens to intents in ActivityClientController
+d4f30c559e8f Limit presentations on task-hosting displays to focused tasks
+bdb911d4b9db Fix integer overflow in ZipFileRO::getEntryFileName
+ca28c9bfbe21 Limit task XML file size and persistable bundle size
+af31d3520f97 Verify permissions for all activities in the Task
+0ce508e4cea3 Check settings client package for CDCA
+283417074f36 Add permission checks to MediaQualityService
+ddfdb00bb4eb Restrict FLAG_TURN_SCREEN_ON for untrusted virtual displays
+11723dbd83f1 Align case-sensitivity check in MessageUpgradeWorker
+be66071c1065 Relocate PipInputConsumer activation logic in InputMonitor
+42191d17964f Add type validation for Bundle policy
+ac99d4662861 Fix metadata spoofing in setAccessibilityWindowAttributes
+e9c982ccdba7 RESTRICT AUTOMERGE: Fix integer underflow vulnerability in PduParser
+938a4d89ff07 Revert^2 "Restrict VirtualDeviceImpl methods to device owner."
+8cff9d1b9297 Revert "Restrict VirtualDeviceImpl methods to device owner."
+3b53e5438bf6 Security bug fix: Prevent USB data changes for non-owner users during lockdown mode.
+
+   * frameworks/libs/systemui
+6dcb7ae iconloader: Themed icons stay on RR's colors until customized
+dbc2b23 Set themed icon scale default value 100 [1/2]
+ef14f15 Themed icons new customization [2/2]
+0c50cad systemui: Translate into the remaining Android languages
+dc68dee systemui: Add translations
+
+   * frameworks/opt/slimrecent
+cfc0317 slimrecent: Translate into the remaining Android languages
+
+   * packages/apps/BugReport
+04afcf0 BugReport: Remove the ROM version
+8d26ffb BugReport: Translate into the remaining Android languages
+9971458 BugReport: Translate into European Portuguese and Traditional Chinese
+94a34ea BugReport: Translate into French, Turkish and Simplified Chinese
+b7f6f32 BugReport: Translate into Russian, Indonesian and German
+82de0f9 BugReport: Translate into Spanish and Brazilian Portuguese
+da226cf BugReport: Add translations
+c5f5280 Bug report: Note sys.boot.reason; the history property is off limits to apps
+917032c BugReport: Hand dumpstate an append-only file for the full bugreport
+
+   * packages/apps/FaceUnlock
+2435ab5 FaceUnlock: Translate into the remaining Android languages
+044279c FaceUnlock: Add translations
+
+   * packages/apps/LunarisDolby
+75bc88e LunarisDolby: Translate into the remaining Android languages
+f53e8fe LunarisDolby: Translate into European Portuguese and Traditional Chinese
+9e0f439 LunarisDolby: Translate into French, Turkish and Simplified Chinese
+b21944d LunarisDolby: Translate into Russian, Indonesian and German
+1f65d5a LunarisDolby: Translate into Spanish and Brazilian Portuguese
+869b290 LunarisDolby: Add translations
+
+   * packages/apps/Remixer
+292a139 Remixer: Quick switch page in Miscellaneous
+460df16 Now Bar: The Live Updates picker shows the picked apps and resets them
+451a529 Remixer: Choice dialogs show their checkboxes and radio buttons
+f4e8e7b Remixer: Add more translations
+c04b907 Remixer: Translate into the remaining Android languages
+db6d210 Remixer: Settings style picks from previews; the colorful tiles are one of them
+d1931e7 Now Bar: The scores row opens the Google app's settings, which opens here
+c88ccbd Now Bar: The pin row picks the app when nothing is pinned
+a5b6d00 Remixer: Drop the Quick settings Customize row, the pencil opens it
+cd4fc59 Nightstand: A preview of the night screen above its options
+7075807 Remixer: Drop Lock Stage
+c1b37b5 Remixer: Translate into European Portuguese and Traditional Chinese
+64f3217 Remixer: Translate into French, Turkish and Simplified Chinese
+b19a398 Remixer: Translate into Russian, Indonesian and German
+c439889 Remixer: Translate into Spanish and Brazilian Portuguese
+6ce277d Remixer: Add translations
+d5a88fa Remixer: At a Glance switch on the Lock screen page
+3a887af Lock Stage: Half-height stage and a scrolling page, so the tray and Save are reachable
+792a494 Remixer: Theme page uses the RR list preference, so it opens again
+4fa96a3 Remixer: Customize row describes the panel customizer
+175b3a7 Looks: Import the RR Utils the SystemUI restart comes from
+57935ea Remixer: Add the Lock screen tab string the Nightstand editor uses
+b721e96 Remixer: Read the primary color through appcompat, like the other pages
+7e7a8cb Remixer: Flatline switch under the status bar clock chip
+38e9fdd Remixer: Page tabs in the Lock Stage editor
+f92cbce Remixer: Nightstand page and a Nightstand tab in the Lock Stage editor
+7692c84 Remixer: Look roulette row under Theme
+2e110d0 Haptic Remix: An edge light color per contact
+5d64a39 Looks: Keep the Lock Stage layout, Haptic Remix patterns and edge moment colors
+d00a32e Remixer: Earbuds row under what the Now Bar shows
+7d63b6a Remixer: Name the Flatline Vitals and Signature faces
+5fbd6e9 Remixer: Live scores come from At a Glance, with a way to its settings
+e7787da Remixer: Add Lock Stage, the lock screen laid out on a grid
+d873a37 Remixer: Name the Flatline clock face
+2505365 Remixer: Add Haptic Remix, patterns you tap out and give to calls, apps, alarms and unlocks
+af5ee84 Remixer: Give each Mode a Look
+
+   * packages/apps/Stitch
+4527be4 Stitch: Translate into the remaining Android languages
+37ec2be Stitch: Translate into European Portuguese and Traditional Chinese
+532ffc1 Stitch: Translate into French, Turkish and Simplified Chinese
+ed9a834 Stitch: Translate into Russian, Indonesian and German
+95c5a2e Stitch: Translate into Spanish and Brazilian Portuguese
+506b144 Stitch: Add translations
+
+   * packages/services/OmniJaws
+801c890 OmniJaws: Translate into the remaining Android languages
+fa4548d OmniJaws: Translate into European Portuguese and Traditional Chinese
+1ca0465 OmniJaws: Translate into French, Turkish and Simplified Chinese
+9252777 OmniJaws: Translate into Russian, Indonesian and German
+22ba382 OmniJaws: Translate into Spanish and Brazilian Portuguese
+cab57e8 OmniJaws: Add translations
+
+   * vendor/extras
+5f2b09f5 extras: Translate into the remaining Android languages
+cef01925 extras: Add translations
+
+   * vendor/gms
+4bb0a02a gms: Turn on app suggestions for the launchers
+58117420 gms: Start the search service Pixel Launcher needs
+e24d1ef1 gms: Let Pixel Launcher read notifications for its dots
+283b47db gms: Ship Pixel Launcher beside RR Launcher for QuickSwitch
+34c7efeb ThemeIcons: Drop com.android.camera overlay
+73a1e1f9 update themed icon
+427d58a7 ThemeIcons: Update
+2de54112 icon: Add agc icon
+5eac60c3 ThemeIcons: Add moba legend icon
+1f8032fe PixelLauncherOverlay: manifest: Add android:isStatic
+e84a428f ThemeIcons: Update
+fd301808 ThemeIcons: Update
+a6b2b4bf ThemeIcons: Update
+78ff0745 ThemeIcons: Update
+cc23b300 ThemeIcons: Update
+9717e54b fixup! ThemeIcons: Sync to AP4A
+e4a85580 lawnicons: Update
+2864a23d ThemeIcons: Sync to AP4A
+ca3c7fed lawnicons: Update
+670233d1 lawnicons: Update
+da76362d lawnicons: Update
+3fecf7e8 lawnicons: Update
+1156fd4f lawnicons: Update
+63d724dd lawnicons: Update
+cc2280e3 lawnicons: Update
+1e06ed93 lawnicons: Update
+53d5cd81 lawnicons: Update
+c07fde15 PixelLauncherIconsOverlay: Add "icons" to package name
+e8cd07e5 PixelLauncherIconsOverlay: Move to non-static
+456719cf lawnicons: Update
+7887eb64 lawnicons: Update
+2fde5604 lawnicons: Update
+c29ab435 lawnicons: Update
+55603b9e lawnicons: Update
+ee9593d9 lawnicons: Update
+76faa39e ThemeIcons: Update Lawnicons
+271a9619 ThemeIcons: Update Lawnicons
+f17940b1 ThemeIcons: Import Lawnicons
+8ac18cbb ThemeIcons: Clean-up before import
+60e611e7 pixel-style: Update oplus camera themed icon
+de086bb0 pixel-style: overlay: Update anxcamera icon
+63137d70 ThemeIcons: Clean-up and update official gms icons
+8c12a6c9 pixel-style: overlay: Use ANX Camera icon for Oplus Camera
+3a7ab990 overlay: Launcher: Update Find my device themed icon from Husky QPR1
+b8f3e2d5 PixelLauncherIconsOverlay: Update some google apps themed icons
+b0e1f37f ThemeIcons: Update official icons
+db5eac83 ThemeIcons: Add MiXplorer Beta to themed_icon_mixplorer
+841fc86e ThemeIcons: Don't differentiate stock Camera Go icon
+1032d97d Update icons from Pixel Launcher mod v1.5
+92474966 ThemeIcons: Use themed icon for OOS Camera
+4d3a19dd ThemeIcons: Add themed icon support for some Chinese apps
+2871c49a PixelLauncherIconsOverlay: fix aida64's themed icon
+65e70d69 ThemeIcons: Extend Camera icon to more packages
+1bd780f1 ThemeIcons: Add support to FMWhatsapp
+2cf215f3 ThemeIcons: Update themed icons
+c0608220 ThemeIcons: Update themed icons
+06de6262 ThemeIcons: Add custom grayscale icons and maps for PixelLauncher
+cee4365f pixel-style: Update from CP3A.260905.009
+1591890a pixel-style: fix NexusLauncher for A16 QPR1
+9729b949 pixel-style: Add RRO to hide NexusLauncher gesture hint
+917795b6 pixel-style: fix NexusLauncher for tablet mode & follow system taskbar size
+ebab4a00 pixel-style: Use Launcher3 value for `taskbar_phone_size` in Pixel Launcher
+1d5cc012 pixel-style: Update
+
+   * vendor/oneplus/dolby
+0209435 dolby: Translate into the remaining Android languages
+946cc2a dolby: Translate into European Portuguese and Traditional Chinese
+0f05757 dolby: Translate into French, Turkish and Simplified Chinese
+e27bf7a dolby: Translate into Russian, Indonesian and German
+846c1f1 dolby: Translate into Spanish and Brazilian Portuguese
+af8be41 dolby: Add translations
+
+   * vendor/oplus/clearcalling
+aab8cab clearcalling: Translate into the remaining Android languages
+6abbcda clearcalling: Translate into Spanish and Brazilian Portuguese
+7915ba0 clearcalling: Add translations
+
+   * vendor/oplus/opfaceunlock
+f6d1d54 opfaceunlock: Translate into the remaining Android languages
+d9118fe opfaceunlock: Translate into European Portuguese and Traditional Chinese
+4fbb8d8 opfaceunlock: Translate into French, Turkish and Simplified Chinese
+3ffc78f opfaceunlock: Translate into Russian, Indonesian and German
+2f23c86 opfaceunlock: Translate into Spanish and Brazilian Portuguese
+6a28d7b opfaceunlock: Add translations
+
+====================
+     11-03-2026
+====================
+
+   * frameworks/base
+7085eb9e871b CredentialProviderInfoFactory: Allow microG provider installed in /data
+c61007820f6f Deduplicate microG signature spoofing checks
+
+   * frameworks/libs/systemui
+18f0d45 iconloaderlib: Render each neon ring once
+
+   * hardware/oplus
+5ca2927 sepolicy: qti: Enable execmem for face unlock
+
+   * packages/apps/BugReport
+27ceb5d BugReport: Send a device token and explain the daily limit
+
+   * packages/apps/GameSpace
+9245683 Gamespace: Disable in-game statusbar DT2S
+
+   * packages/apps/Remixer
+d511a0f Remixer: Pick the apps for Live Updates and see what is pinned
+67aad50 Remixer: Load the font previews off the main thread
+812acc4 Remixer: Read and restore backups off the main thread
+
+   * vendor/oplus/clearcalling
+dc8b47f Clear Voice: Own the Settings manifest entries
+
+====================
+     11-01-2026
+====================
+
+   * frameworks/base
+0ee8722f0cab Automatic translation import
+
+   * hardware/oplus
+eaa32c0 Automatic translation import
+
+   * packages/apps/Remixer
+b3fa1b9 Remixer: Say the Duck keybox renews on its own
+f225db7 Remixer: Add a Now Bar customizer
+759fb77 Remixer: Remove the Mono QS theme
+b1fb3a1 Remixer: Move the QS media options into QS
+
+   * vendor/gms
+4fca0c38 gms: Let NowPlayingFlags reach ASI's Now Playing switch
+
+====================
+     10-31-2026
+====================
+
+   * packages/apps/BugReport
+6159e2f BugReport: Send reports to the RR inbox
+3a67171 BugReport: Word the dump row for both report types
+4b46e85 BugReport: Initial bug report app
+
+   * packages/apps/LunarisDolby
+aca13bc dolby: Retry the saved state until the effect accepts it
+
+   * packages/apps/Remixer
+5b3b488 Remixer: Add the QS Media tile size
+02ded77 Remixer: Add a QS media player style picker
+
+   * vendor/gms
+f9d3ab8a gms: Let ASI bind PCS for Now Playing
+dce1ae2f gms: Ship the Now Playing music model and song database
+2ae97f13 gms: Make Google the default autofill and passkey provider
+
+   * vendor/oneplus/dolby
+634bf1f dolby: Allocate the whole ComponentStore in the media.c2 service
+
+====================
+     10-30-2026
+====================
+
+   * frameworks/base
+649b2b731d91 Don't wake up when power manager stops a dozing dream
+
+   * kernel/platform/kernel-6.12/vendor/oneplus/sm8850-modules
+03435a444f oplus: charger: Report missing charge time estimates
+
+   * packages/apps/GameSpace
+c0c97b7 Fix bottom sheet bounce on excessive dragging
+
+   * packages/apps/LunarisDolby
+f194ae4 dolby: Fix floating navbar width
+
+====================
+     10-29-2026
+====================
+
+   * packages/apps/LunarisDolby
+88464ab dolby: Switch to compact navbar design
+954809f dolby: Update Indonesian translation
+
+====================
+     10-28-2026
+====================
+
+   * frameworks/base
+4fefbecadd7e biometrics: Fix HIDL->AIDL Face Unlock implementations
+
+   * hardware/oplus
+c78b87c sepolicy: qti: Move remaining SM8350 wakeup node out of legacy-um
+a2c4dd6 sepolicy: qti: Label SM7250 wakeup nodes
+ca41abe sepolicy: qti: Sort wakeup nodes
+
+====================
+     10-27-2026
+====================
+
+   * device/oneplus/infiniti
+b0c62bc infiniti: Enable WV provisioning 4.0 for non-CN variants
+
+   * device/oneplus/sm8850-common
+95bf8e6 sm8850-common: Decommonize WV provisioning 4.0 prop
+97e67cc sm8850-common: overlay: Cycle ringer mode on assist long press
+
+   * frameworks/base
+d52d3ab7b0d8 PhoneWindowManager: Use the configured assist short/long press action
+
+   * hardware/oplus
+d548913 wvmkiller: Do nothing on provisioning 4.0 devices
+
+====================
+     10-26-2026
+====================
+
+   * frameworks/base
+73da1c47ea9b PhoneWindowManager: Add support for the cycle ringer mode button action
+5ac943896b6c fixup! frameworks: Add device controls shortcut to power menu
+
+   * packages/apps/Launcher3
+37b78c1347 Launcher3: Allow defaulting to fixed landscape mode
+b20eb1d627 Launcher3: Add resource to allow rotation
+97913d2600 Launcher3: Fix NPE when screen reader is active
+3181d556a5 Launcher3: Check responsive specs from the display option spec
+0229c59399 fixup! Launcher3: Implement Hotseat searchbar
+b319166e7b Launcher3: Fix contextual button for phone gesture mode
+9ab584bb60 Validate mControllers before access it.
+c9017645ee Launcher3: Skip shortcut queries for a locked work profile
+dd4638e72f Launcher3: Fixing private space locked issue
+52999ce9e9 Launcher3: Remove glitchy IME switcher button on SUW screen
+7bb15f9040 Launcher3: Use correct nav bar orientation on default landscape displays
+79d34da841 Launcher3: Keep the navigation bar at the bottom on large screens
+221789b385 Launcher3: Fix bottom insets
+4df0788412 Launcher3: Reserve navigation bar space when taskbar is disabled
+41bfc26ebf Launcher3: Treat built-in secondary displays like the primary display
+60bce2f33e Launcher3: Make nav bar respect bottom of display cutout
+1665f6cc7e Launcher3: Support multiple display densities for default grid size
+f0b28c24e4 Launcher3: Drop hardcoded shortcut label typeface
+9c389a0f7b Launcher3: Start-align the SUW back nav on expressive
+4d192f9e47 Launcher3: keep icon pack icons unthemed
+
+   * packages/apps/Remixer
+d631723 Remixer: Put the battery options on the Status bar page
+9ea859c Remixer: Drop the custom cloned apps page
+75c9a22 Remixer: Drop the launcher Liquid Glass switches
+4216745 Remixer: Give the pie slice picker OK and Cancel
+8de6a85 Remixer: Stop disabling apps in the clone profile
+53db9ac Remixer: Update keybox repo URL
+
+   * vendor/gms
+03fed430 gms: Make Google Phone the default phone app
+55c68d59 gms: Set the Google app as assistant and Circle to Search provider
+c4bf0f7c gms: Keep Gemini out of clone profiles
+964fd239 gms: Make Android Auto the automotive projection role holder
+
