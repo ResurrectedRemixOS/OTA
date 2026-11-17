@@ -1,0 +1,2 @@
+Device: OnePlus Ace 5 (giuliac)
+Device maintainer: franlop77

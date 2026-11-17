@@ -1,0 +1,31 @@
+{
+    "response": [
+        {
+            "maintainer": "franlop77",
+            "oem": "OnePlus",
+            "device": "giuliac",
+            "filename": "",
+            "md5": "",
+            "sha256": "",
+            "version": "",
+            "buildtype": "OFFICIAL",
+            "buildvariant": "gapps",
+            "os_patch_level": "",
+            "forum": "",
+            "gapps": "",
+            "firmware": "",
+            "modem": "",
+            "bootloader": "",
+            "recovery": "",
+            "paypal": "",
+            "telegram": "",
+            "dt": "https://github.com/ResurrectedRemix-Devices/android_device_oneplus_giuliac",
+            "common-dt": "https://github.com/ResurrectedRemix-Devices/android_device_oneplus_sm8650-common",
+            "kernel": "https://github.com/LineageOS/android_kernel_oneplus_sm8650",
+            "timestamp": 0,
+            "size": 0,
+            "os_sdk_level": 37,
+            "download": ""
+        }
+    ]
+}

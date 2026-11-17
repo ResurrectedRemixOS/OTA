@@ -1,0 +1,2 @@
+Device: OnePlus 13R (giulia)
+Device maintainer: franlop77
