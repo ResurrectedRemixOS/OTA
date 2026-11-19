@@ -21,8 +21,8 @@
             "modem": "",
             "bootloader": "",
             "recovery": "",
-            "paypal": "",
-            "telegram": "",
+            "paypal": "https://buymeacoffee.com/jonhlcsgm",
+            "telegram": "https://t.me/onyxmodding",
             "dt": "https://github.com/jonhlcsgm/android_device_xiaomi_onyx",
             "common-dt": "",
             "kernel": "https://github.com/jonhlcsgm/android_kernel_xiaomi_sm8735"
