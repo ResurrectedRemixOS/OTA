@@ -1,0 +1,2 @@
+Device: Redmi Note 10 Pro (sweet)
+Device maintainer: stahed

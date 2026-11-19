@@ -1,0 +1,2 @@
+Device: POCO F7 (onyx)
+Device maintainer: jonhlcsgm
