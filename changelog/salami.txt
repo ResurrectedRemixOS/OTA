@@ -2,14 +2,251 @@ Device: OnePlus 11 (salami)
 Device maintainer: OscarM1019
 
 ====================
+     11-20-2026
+====================
+
+   * frameworks/base
+c521a4f38065 Keybox: Extract a keybox from a capture
+564a9ec41da8 Duck RKP: Keep signed CSR bytes when adding the fingerprint
+2a8cc01e0018 [BUGFIX] fix ignore secure window flags
+41bcd16f8a98 Cover more cases when ignoring secure window flags
+8899f8ae9923 base: Add support for window ignore secure [1/2]
+478a80c47092 SystemUI: Let each SIM keep its own status bar icon
+
+   * packages/apps/Remixer
+ce1f53e Remixer: Save the Duck RKP keybox for another phone
+7969a62 Remixer: Extract a keybox on import
+21791a3 Remixer: Add Screenshot any app to Misc
+b691d94 Remixer: Add a separate SIM icons switch to the icon style picker
+0557da6 Remixer: Restart System UI only once both icon styles are loaded
+
+   * vendor/extras
+7bce2071 extras: icons: Give each SIM its own icon while a signal style is on
+
+====================
+     11-19-2026
+====================
+
+   * frameworks/base
+266c4755e431 SystemUI: Mark full time in the Now Bar
+220cbd55da59 SystemUI: Open the Now Bar's charging item as a battery card
+040ade9fa870 SystemUI: Show Do Not Disturb and modes in the Now Bar
+49a585cf5fd6 SystemUI: Run a light around the Now Bar while an assistant works
+065348c2e281 SystemUI: Read One UI's live notifications in the Now Bar
+
+   * packages/apps/Remixer
+1a4442e Remixer: Turn off the pages' nested scrolling in code
+1909744 Remixer: Preview volume panel looks on a live stage
+957b0a8 Remixer: Switch Do Not Disturb and modes in the Now Bar
+1ca89a9 Remixer: Keep the charging pages' toolbar still while the options scroll
+
+   * packages/apps/Settings
+61dd9d65067 Settings: Declare Remixer's volume panel page
+
+   * vendor/rr
+c406acee4 config: Let devices set their own default sounds
+e739167c3 config: Declare One UI's Now Bar feature
+
+====================
+     11-18-2026
+====================
+
+   * build/make
+fa3ae1b0d4 core: Tag builds signed from vendor/rr-priv as release-keys
+
+   * build/soong
+26bee3394 soong: Tag builds signed from vendor/rr-priv as release-keys
+
+   * frameworks/base
+fe73815012fa Duck RKP: Post a V2 CSR without checking the DICE chain
+fa55320100be SystemUI: Judge the charging animation speed by watts
+2851f61bfb31 SystemUI: Share RR's charging views with Settings
+a3530f51c36c SystemUI: Tie the charging animation speed to the phone's watts
+5838c4ef9aa0 core: Let devices set their charging watts
+38a89f28a8f1 SystemUI: Override the string settings in the system settings repository
+3478db69c1fb SystemUI: Choose the plug-in charging animation
+62a13f8a54dc SystemUI: Draw charging animations in other makers' styles
+0b7f7818b44a SystemUI: Add RR's own charging animations
+2ffef11a6ce3 [ax_themestore] Optimize custom themestore animations and lifecycle
+f00492acc233 SystemUI: fix charging ripple crash on window overlay teardown
+edb348f2102c SystemUI: Fixing circle charge animation
+268b6acccdf8 SystemUI: Add charging anim & battery themes support
+b239d2ad904c SystemUI: Add selectable charging animations
+8f09bcf18af4 SystemUI: Drive charging effects from RR's keyguard state
+20b787a262b8 SystemUI: ChargingEffects: Fix charging animation flashing briefly after unlock
+752ec0aaad43 SystemUI: ChargingEffect: Introduce new image flow effect [1/2]
+6da1fe821c0c SystemUI: charging: fix animation origin cached at (0,0)
+e121caf96c68 SystemUI: Update changes effect default values [1/2]
+50bf8cb7aabc SystemUI: Introduce charging effects [1/2]
+ae80551817ca SystemUI: Keep the wallpaper pickers building with the settings repository
+
+   * packages/apps/Remixer
+1d0d8d6 Remixer: Clip the charging pages' lists under their stages
+f9c7c97 Remixer: Give the charging pages' switch and controls a Material theme
+87502e3 Remixer: Preview charging animations on a live stage
+0b73c9a Remixer: Settings for the lock screen charging effects
+c214d37 Remixer: Pick the charging animation
+73187bd Remixer: Rebuild the icon style picker as decks
+
+   * packages/apps/Settings
+8a6710cb942 Settings: Add Remixer's charging animation pages
+
+   * vendor/extras
+9f331534 extras: themes: Ship the Moto and Nothing charging animations
+1ef8cf5b [ax_theme_engine] adding back gesture | charging animation themes
+3e31e29e extras: themes: Ship Sea, LineDot, Odin, Retro, Crystal and Comet
+481eb849 extras: icons: Add Retro, Crystal and Comet
+de5c30c8 extras: icons: Restyle Sea, LineDot and Odin for the A17 status bar
+3a86a806 extras: themes: Ship the signal and Wi-Fi icon styles
+0315d501 extras: icons: Add ten signal and Wi-Fi styles drawn for RR
+ea436506 extras: icons: Restyle the imported packs for the A17 status bar
+23754b18 extras: icons: Rename the Compact packs to Classic
+3949460c Restore icon-packs and reorganize icons structure
+cc0bdc9d addons: Adapt to qpr2
+2dd9c797 addons: Import Plumpy, Aurora, Gradicon, Lorn iconpack from Iconify
+e89dd02e addons: Import signal & wifi icons
+973c1fc4 addons: Switch to Android.bp
+b495a47c addons: Introduce Custom Statusbar Signal & Wi-Fi icons
+
+   * vendor/rr
+93111e91e config: Build official only with RR's own keys, from vendor/rr-priv/keys
+
+   * vendor/rr-priv/keys
+808589d keys: Work from vendor/rr-priv/keys
+
+====================
+     11-17-2026
+====================
+
+   * frameworks/base
+715b7c64831a SystemUI: Read Google's game records for the score card
+1b788ec3a339 core: Let platform apps hold READ_GLOBAL_APP_SEARCH_DATA
+b84309a559b9 SystemUI: Show live games in the status bar chip and the shade
+c43c74f7c5e0 SystemUI: Let the Now Bar's goal play after a swipe
+55b3b4e29dd4 SystemUI: Take over the Now Bar when a team scores
+ad469244ff0d SystemUI: Skip the card's buttons when reading Now Bar teams
+3c306b0e336a SystemUI: smartspace: Open google weather on tapping smartspace
+6644c9d31b48 SystemUIGoogle: smartspace: port Lunia fixes for decompile regressions
+
+   * packages/apps/Launcher3
+3139a8a6dd Launcher3: Skip the card's buttons when reading a game's teams
+
+   * packages/apps/Remixer
+ade4b9f Remixer: Add signal and Wi-Fi icon style pickers
+
+   * packages/apps/Settings
+49fafee2240 Settings: Declare the Remixer icon style picker
+
+====================
+     11-16-2026
+====================
+
+   * bionic
+8e976e5eb custom_rom_hide: Harden post-syscall pathname spoofing against concurrent unmap
+aec07d613 custom_rom_hide: Avoid dereferencing caller pathnames in custom ROM hide filters
+
+   * build/soong
+654c3221b soong: Show the RR version in the lunch banner
+
+   * device/lineage/sepolicy
+e044685 sepolicy: Address denial for setting vbmeta prop
+
+   * device/oneplus/salami
+211a0e3 salami: sepolicy: Let Gallery reach horae and read touch props
+0c4c2b7 salami: sepolicy: Let init chown cool_down
+
+   * device/oneplus/sm8550-common
+e880f81 sm8550-common: sepolicy: Silence qti_display_boot's composition cache setprop
+8ce28df sm8550-common: Find kswapd and kcompactd with pgrep
+
+   * frameworks/base
+56906f68c700 SystemUIGoogle: smartspace: honour setHiddenByPolicy on BcSmartspaceView
+95098c0ba009 SystemUIGoogle: Fix smartspace pager indicator and long press
+02a68a1a9080 SystemUIGoogle: Bind lockscreen target filter
+c0542a6e5c84 Smartspace: Drop the config plugin's switches again
+b2bb5e1096f1 SystemUI: update smartspace from Pixel 11
+90d56316f236 SystemUI: Update smartspace to CP2A.260605.016
+704b11b3c366 Keyguard: 8dp clock-to-date gap, matched in the wallpaper picker preview
+ca2213f7d75e SystemUI: Fade the keyguard slice view through clock size changes
+febb026a0c0c Keyguard: hide the weather-clock at-a-glance while notifications are present
+a48009efd453 spoof: Honor empty PixelProps targets
+fa50a39e13b7 core: trickystore: Do not keep vbmeta digest empty
+df3a41d2c057 SystemUI: Let the Now Bar sit above the fingerprint sensor
+048f0597cf79 GlassSettings: Let Tint change Android's own glass color
+fe23e6784dd2 UdfpsHelper: Ignore brightness events once the dim layer is gone
+186d4e032dbd GlassSettings: Add the launcher's folders
+
+   * packages/apps/Launcher3
+b9556722eb Launcher3: Read folder glass from RR's glass settings
+5b8fa2bb44 Launcher3: Put folders on Catalyxx glass
+c155cd21a2 Launcher3: Let Catalyxx glass draw folders
+
+   * packages/apps/Remixer
+8ae17ef Remixer: Keep an empty PixelProps target list empty
+4e3d8d5 Evolver: TrickyStore: Reduce keybox expiring threshold to 7 days
+b4ef787 Evolver: TrickyStore: Harden status-list parsing
+bd6819a Evolver: TrickyStore: Accept JSON and check keys in patch levels
+db01674 Remixer: Add the Now Bar's above the fingerprint switch
+c6eb89f Remixer: Keep Tint on with Android's glass color
+4a030af Remixer: Add home screen folders to the glass places
+
+   * system/sepolicy
+19949f31d sepolicy: Remove neverallow for system server setting boot prop
+
+====================
      11-15-2026
 ====================
 
    * device/oneplus/salami
 367895d salami: extract-files: Enable WLAN ICMP offload
 
+   * frameworks/base
+72c566d47e39 SystemUI: Pop the QS brightness tile out while it is dragged
+a737e0f5ebfc SystemUI: Keep the QS slider fill under the finger
+9fe2474b7dd9 display: Drop fusion hard-zero lux at any ambient level
+f61fa1942f93 SystemUI: Use the translated name for the QS Sliders tab
+fd2ba985bfba SystemUI: Keep the QS volume tile state still while the level moves
+25e3a38c0623 SystemUI: Show the safe headphone volume warning from the QS volume tile
+0aec0d18c019 SystemUI: Apply a picked look to the tall QS volume tile
+fd9e7328a4fa SystemUI: Step the QS brightness tile by 5% for accessibility
+f736443dc6ff SystemUI: Show the brightness policy dialog once per drag
+17c658db244c SystemUI: Follow the output device in the QS volume tile
+51858b88073a SystemUI: Animate the QS slider levels without recomposing the tiles
+1b1b6559bccc SystemUI: Mute from the QS slider icon, set the level from the bar
+b6bec6a69b30 SystemUI: Pull the shade over the QQS slider pills
+942c47dfba00 SystemUI: Hide the bars the QS slider tiles replace
+2c3037de04a5 SystemUI: Leave existing QS tiles alone on a dirty flash
+1c7278925215 SystemUI: Start the split QS tile list with the player and sliders
+b15c587284ed SystemUI: Keep the QS slider tile sizes picked by dragging
+58ee97ad6ac5 SystemUI: Paint the QS slider tiles in each theme's colors
+dbf8b005ae75 SystemUI: Drop the lines from the QS slider tiles
+c1ce38e696d7 SystemUI: Start QS with the player and slider tiles side by side
+4e18adcfff5d SystemUI: Pick the QS slider layout and look from edit mode
+bd452ec05c0b SystemUI: Give the QS sliders the theme's look, Liquid and a percent option
+39555f4bdce7 SystemUI: Add a Sound mode tile to QS
+a107bc581c62 SystemUI: Add a Brightness tile to QS
+
+   * packages/apps/BugReport
+6ebfd6a BugReport: Check the build again at every boot and switch back on when official
+f390129 BugReport: Send the build name and platform certificate with reports
+09535e0 BugReport: Run only on builds signed with RR's platform key
+
+   * packages/apps/Launcher3
+fd5cd752df Launcher3: Show live scores in At a glance
+
+   * packages/apps/Stitch
+5c09d66 Stitch: Check the build again at every boot and switch back on when official
+9a03614 Stitch: Run only on builds signed with RR's platform key
+
+   * packages/apps/Updater
+ab8fb2c Updater: Check the build again at every boot and switch back on when official
+9cebfca Updater: Run only on builds signed with RR's platform key
+
    * vendor/oneplus/salami
 99d1df3 salami: Enable WLAN ICMP offload
+
+   * vendor/rr
+76cde3035 config: Build official only with the private keys, and the Updater, Report a bug and Stitch only into official builds
 
 ====================
      11-14-2026
@@ -59,14 +296,14 @@ ce1265e06a Launcher3: Clear a folder's reveal clip when it finishes opening
 6dcd6b0d2db Settings: Phone ringtone setting for Multi SIM device [2/3]
 5b1e620b209 Settings: show per sim ringtone
 
-   * vendor/lineage-priv/keys
-85d55ca rr-17.0 private keys
-
    * vendor/oplus/clearcalling
 9f213d8 Clear Voice: Apply the saved state at boot
 
    * vendor/rr
 46522777d rkp: Credit Duck-ToolBox for the CSR framing
+
+   * vendor/rr-priv/keys
+85d55ca rr-17.0 private keys
 
 ====================
      11-13-2026
@@ -1988,117 +2225,6 @@ b1fb3a1 Remixer: Move the QS media options into QS
      10-31-2026
 ====================
 
-   * packages/apps/BugReport
-6159e2f BugReport: Send reports to the RR inbox
-3a67171 BugReport: Word the dump row for both report types
-4b46e85 BugReport: Initial bug report app
-
-   * packages/apps/LunarisDolby
-aca13bc dolby: Retry the saved state until the effect accepts it
-
-   * packages/apps/Remixer
-5b3b488 Remixer: Add the QS Media tile size
-02ded77 Remixer: Add a QS media player style picker
-
    * vendor/gms
 f9d3ab8a gms: Let ASI bind PCS for Now Playing
-dce1ae2f gms: Ship the Now Playing music model and song database
-2ae97f13 gms: Make Google the default autofill and passkey provider
-
-   * vendor/oneplus/dolby
-634bf1f dolby: Allocate the whole ComponentStore in the media.c2 service
-
-====================
-     10-30-2026
-====================
-
-   * frameworks/base
-649b2b731d91 Don't wake up when power manager stops a dozing dream
-
-   * kernel/oneplus/sm8550
-ba81733ff260 FROMGIT: usb: gadget: f_midi: fix UAF race during IN request handling
-
-   * packages/apps/GameSpace
-c0c97b7 Fix bottom sheet bounce on excessive dragging
-
-   * packages/apps/LunarisDolby
-f194ae4 dolby: Fix floating navbar width
-
-====================
-     10-29-2026
-====================
-
-   * packages/apps/LunarisDolby
-88464ab dolby: Switch to compact navbar design
-954809f dolby: Update Indonesian translation
-
-====================
-     10-28-2026
-====================
-
-   * frameworks/base
-4fefbecadd7e biometrics: Fix HIDL->AIDL Face Unlock implementations
-
-   * hardware/oplus
-c78b87c sepolicy: qti: Move remaining SM8350 wakeup node out of legacy-um
-a2c4dd6 sepolicy: qti: Label SM7250 wakeup nodes
-ca41abe sepolicy: qti: Sort wakeup nodes
-
-====================
-     10-27-2026
-====================
-
-   * frameworks/base
-d52d3ab7b0d8 PhoneWindowManager: Use the configured assist short/long press action
-
-   * hardware/oplus
-d548913 wvmkiller: Do nothing on provisioning 4.0 devices
-
-   * kernel/oneplus/sm8550
-2a93eb2a754d UPSTREAM: Bluetooth: RFCOMM: fix NULL dereference of dlc->session in RFCOMM_CONNINFO
-
-====================
-     10-26-2026
-====================
-
-   * frameworks/base
-73da1c47ea9b PhoneWindowManager: Add support for the cycle ringer mode button action
-
-   * packages/apps/Launcher3
-37b78c1347 Launcher3: Allow defaulting to fixed landscape mode
-b20eb1d627 Launcher3: Add resource to allow rotation
-97913d2600 Launcher3: Fix NPE when screen reader is active
-3181d556a5 Launcher3: Check responsive specs from the display option spec
-0229c59399 fixup! Launcher3: Implement Hotseat searchbar
-b319166e7b Launcher3: Fix contextual button for phone gesture mode
-9ab584bb60 Validate mControllers before access it.
-c9017645ee Launcher3: Skip shortcut queries for a locked work profile
-dd4638e72f Launcher3: Fixing private space locked issue
-52999ce9e9 Launcher3: Remove glitchy IME switcher button on SUW screen
-7bb15f9040 Launcher3: Use correct nav bar orientation on default landscape displays
-79d34da841 Launcher3: Keep the navigation bar at the bottom on large screens
-221789b385 Launcher3: Fix bottom insets
-4df0788412 Launcher3: Reserve navigation bar space when taskbar is disabled
-41bfc26ebf Launcher3: Treat built-in secondary displays like the primary display
-60bce2f33e Launcher3: Make nav bar respect bottom of display cutout
-1665f6cc7e Launcher3: Support multiple display densities for default grid size
-f0b28c24e4 Launcher3: Drop hardcoded shortcut label typeface
-9c389a0f7b Launcher3: Start-align the SUW back nav on expressive
-4d192f9e47 Launcher3: keep icon pack icons unthemed
-
-   * packages/apps/Remixer
-d631723 Remixer: Put the battery options on the Status bar page
-9ea859c Remixer: Drop the custom cloned apps page
-75c9a22 Remixer: Drop the launcher Liquid Glass switches
-4216745 Remixer: Give the pie slice picker OK and Cancel
-8de6a85 Remixer: Stop disabling apps in the clone profile
-
-   * vendor/gms
-03fed430 gms: Make Google Phone the default phone app
-55c68d59 gms: Set the Google app as assistant and Circle to Search provider
-c4bf0f7c gms: Keep Gemini out of clone profiles
-964fd239 gms: Make Android Auto the automotive projection role holder
-
-   * vendor/oplus/camera-salami
-bb6b571 camera-salami: Keep Camera and Gallery out of clone profiles
 
